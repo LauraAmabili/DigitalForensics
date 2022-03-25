@@ -1,0 +1,32 @@
+# SSD
+Challenges in black box analysis and goals
+Testing Methodologies
+Forensic friendliness
+Discussion and conclusions
+
+Nand based flash memories chips used as mass storage, they became popular
+nand chips have a limited lifespan, you can reprogram the chips a limited number of times
+they have to be completed cleaned and rewrite, you cannot split the bits
+Flt filters everything and makes the computer believe there is a rotational drives behind
+
+Write caching: a lot of caches, it is impportant because we power down clear the cache 
+Trimming: most important-> write we need to black and write ( black need time) so write takes more time than reading
+if this block is not in use anymore, why do I have leave it written so that when i have to overwrite i have to bleak it first ? if i ave a list of block that i can overwritten, when i have nothing to do i go the the list and clean it
+the drive have a list of blocks that i need to be freed and goes to them and black it   
+trimming: act of trimming npowered by the OS that gives thelist of blocks
+it would have better if the drive know which block are free and go to free them itsef-> garbage collector
+since everytime we write on a cell we are using it ( decreasing it life), the less we write the better so we do compression 
+balance how fast we can comopress things
+bad block handinling: at some point the cell fails, so the FTL needs to be able to handle it, some drives have extra cells ( more than it shows to use it when they fails) 
+Wear leveling. if a certain cell keeps, keeps the wear tf the drive on the same level, ftl copies data ??, multiple copies of the data, maybe when it gets deleted it is in different places of the drive 
+
+in a HDD head, sector, track, you literrlly tel the drive go here and read the content 
+
+movr arounf data, copy data and sicne there is the trimming part, it data as long that the drive is power on even if the OS is on
+from the external point of view we don t have control, when we perform acquisation we dont get the physical data, we get the data that the FTL tells us, if tells 
+
+
+
+only the ftl knows how to map the data, where to put the data, if compress, encrypt or obfuscate it
+
+FTL obfuscate to protect the data from us, to donàt allow us to change the FTL for another
