@@ -26,7 +26,27 @@ movr arounf data, copy data and sicne there is the trimming part, it data as lon
 from the external point of view we don t have control, when we perform acquisation we dont get the physical data, we get the data that the FTL tells us, if tells 
 
 
-
 only the ftl knows how to map the data, where to put the data, if compress, encrypt or obfuscate it
 
-FTL obfuscate to protect the data from us, to donàt allow us to change the FTL for another
+FTL obfuscate to protect the data from us, to don't allow us to change the FTL for another
+
+Challenges in black box analysis and goals
+
+Trim: the pre emptying of the blocks
+
+
+a lot of use of chaching, if you need to do the same test more time you have to turn the caching off because it is going to impact 
+
+
+TRIMMING 
+
+you put data on the drive
+quick format the drive 
+stimulate the OS to tell the drive to trim everything 
+you go back and read the data
+if trim wa sactived it turnd on after 10s of inactiviti of the drive ( trim works when drive not active) 
+forensic analis on SSD ( unless we are lucky) we do not expect to find file deleted
+
+
+Gargbage collection
+you feed the drive, switch to a forensic OS, quick format, and see what happens
