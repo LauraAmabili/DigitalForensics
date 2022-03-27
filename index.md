@@ -100,36 +100,4 @@ fill uo partition that is overlapping
 in reality peolple have few partitions, bizzarre behaviours, one tool names partitions in the same ways windows does ( A,b,c,), in windows if you go beyond 20 partitions, the next is AA.. starts using two letters ncase ( the tool) doesn not do that, the 22 don't show up. inconsistency show uop if you have a large number of partitions. 
 
 
-# perso prima lezione fraud :( non ho committato
-## 18/03/2022
-### Fraud
 
-
-supervised look inside the huge amount of data 
-unserivised: how they behave. 
-extract features from data 
-such kind of systems are not enough , complement the system with supervised.
-learn the diffrence between the known 
-
-un vs sup .> you want to apply unservised every time you ahve a data set but not labeled
-supervaside data with label legitimed and unlegitimed -> predict, detect and estimate some features
-
-limitation of supervised learning techiques: is it not enough 
-
-start knownladge from the domain 
-
-antifraud detection system I have to consider the information I have available
-
-
-start with unsupervised learning that extract novel patterns, once you have the investigation of the anaylist you start with data from the past, find pattern and then supervised 
-
-Fraud managment cycle: 
-Fraud detection -> detect it 
-Fraud Investigation: every thing flagged as fraud must be investigate by humane EVERY TIME, in order to check if it is a really fraud or not, it's important, allows to understand the knowledgne to use for automted systems
-Fraud Confirmation: not, ok this is not fraudolent, change the label, retrain your system, unless put and coferm the label and go on 
-Fraud Prevention : now we have to prevent these transaction
-
-feedback loop-> you have to automatize all these process and we will automatize this process-> you have to update all your models and systems (the supervised and unsupervised to mathc the new pattern) 
-
-
-Fraud analytocs process model 
