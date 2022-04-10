@@ -31,3 +31,89 @@ feedback loop-> you have to automatize all these process and we will automatize 
 
 
 Fraud analytics process model 
+
+
+
+Fraud 3
+
+Machine learning for Fraud Detection 
+pefrorm detection 
+
+Real data is typically dirtu, full of inconsistencies, incompleteness and duplication, from messy data you get messy analytical models
+so we have to apply data filtering mechanisms
+first step of data anlyting preprocessing part
+data preprocessing step -> 80% of your time
+lose a lot of time here, data are pain if you have ever worked with a real dataset
+
+Data-filtering mechanisms must be applied to clean up and reduce the data.
+Even the slightest mistake can make the data totally unusable and the results invalid.
+ 
+-transactional data: structured and detailed information captyring the key characteristics of a customer transaction
+Summarized over longer time horizons by aggregating it -> they are meaningful when interpreted individually and furthermore their interaction is useful for fraud detectio  and anti money laundering
+-types of data elements
+continuous data: defined on an interval ( limited and unlimited) 
+categorial:all the set of data defined on a category  
+  -nominal: no meaniningful ordering between a limited set of data
+  -ordinal: meaningful ordering
+  -binary: two values 
+
+-sampling: take a subset of historical data to build an analytical model 
+we not analyze directly the full data set because the key requirement for a good sample is to be representative fot the future entities 
+
+
+ 
+Take a subset of historical data to build an analytical model.
+With the availability of high-performance computing
+why not analyze directly the full data set?
+ 
+  sampling procedure: problem of bias, biased on your decision/selection
+  taking a sample is biased by our decision
+  a good sample should not be biased 
+  model and select sample that target the avaerage period and behavior, i want an average picture
+  but this is not an easy task 
+
+what can I do ? 
+-build separate models for homogenous time frames or different frames-> complex and demanding solution
+-sampling observetions over a period covering a full business cycle and build a single model
+
+Stratified sampling: a sample is taken according to predefined strata-> stratifying according to the target fraud indicator-> sample will contain exactly the same percentages of (non-) fraudulent transactions as in the original data
+-> stratification applied on predictor variables-> resemble the real product transaction distribution 
+
+
+
+Visual data exploration is important, gives you an initial insights into the data, you can use plots
+Then inspect some basic statistical measurements -> calculate them separately for each of the target classes to see whether there are any interesting patterns present 
+
+-basic descriptive statistics
+descriptive statistics provide basic insight for the data, they should be assessed together in support and completion of each other
+-MEAN AND MEDIAN
+-VARIATION/STANDARD VARIATION 
+-PERCENTILE VALUES
+-MODE
+
+-specific descritive statistics
+-SYMMETRY OR ASYMMETRY OF A DISTRIBUTION -> harder to interpret: limits their pratical use, sometimes it is easier to assess these aspects by inspecting visual plots of the distribution of the involved variables
+
+-missing values
+Some analytical techniques (e.g., decision trees) can deal directly with missing values. Other techniques need some additional preprocessing.
+ a. 
+ 1. Replace the missing values with a known value
+ 2. Delete observations or variables with lots of missing values: assumes information has no meaningful interpretation 
+ 3. Keep missing values since they can be meaningful and may have relation with fraud and nees to be considered as a separate category 
+b. Statistically test whether missing information is related to the target variable or not.
+1. if yes, then we can adopt the keep strategy and make a special category for it
+2. if not, one can depending on the number of observations available- delete or replace
+
+-outliers 
+extreme observations that are very dissimilar to the rest of the population, can be valid or invalid , unvariate(one dimension) or multivariate(multiple dimensions)
+  UNIVARIATE OUTLIER DETECTION AND TREATMENS
+  .minimum and maximum values for each of the data elements 
+  .graphical tools: histograms, box plot, z-scores 
+  MULTIVARIATE OUTLIER DETECTION AND TREATMENS
+  .fitting regression lines and inspecting the observations with large errors
+  .clustering or calculating the Mahalanobis distance
+-variouys schemes exist to deal with outliers 
+  for invalid observations one could treat the putlier as a missing value
+  for valid obs impose both a lower and upper limit on a variable and any values below/above are brought back to these limits 
+
+Construct a set of rules formulated based on expert knowledge 
