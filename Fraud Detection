@@ -108,12 +108,107 @@ b. Statistically test whether missing information is related to the target varia
 extreme observations that are very dissimilar to the rest of the population, can be valid or invalid , unvariate(one dimension) or multivariate(multiple dimensions)
   UNIVARIATE OUTLIER DETECTION AND TREATMENS
   .minimum and maximum values for each of the data elements 
-  .graphical tools: histograms, box plot, z-scores 
+  .graphical tools: histograms, box plot, z-scores
+  compute the distribution, represent it on an istogram 
+  if inside the range, plot all the data on this line, you compute statistics on your data, then you plot the rane first/last quartile-> how much of your data is inside this area
+  ho wmany stanrdard deviation an observation lies away from the mean-> you check for each single instance how much differs from the media in terms of standard deviation 
+
   MULTIVARIATE OUTLIER DETECTION AND TREATMENS
+  -distance between different vectors
   .fitting regression lines and inspecting the observations with large errors
   .clustering or calculating the Mahalanobis distance
+
+
 -variouys schemes exist to deal with outliers 
   for invalid observations one could treat the putlier as a missing value
   for valid obs impose both a lower and upper limit on a variable and any values below/above are brought back to these limits 
 
 Construct a set of rules formulated based on expert knowledge 
+find relation you know must be present in your dataset
+constraint that apply 
+
+take explicit precautions
+
+theser kind of inconsistences can by find by experience
+## preprocessing
+extremly careful to treat these values, you have to ducment by addign a feature that specify because 
+it is missing a valueif you start a preprocessing in the wrong way you cannot be more able to detect the anomaly 
+
+another problem: represented by this image : INSERT image
+compare two value of your dataset -> the distance ( eucledian, manhattan..)
+the problem of this computation is that it is not correct ? 
+The scale are differt!!! doesn't make any sense 
+u have to standardize your features !!
+standardize data-> scaling variables to a similar range
+-mix/man standardize
+-z-score 
+-decimal scaling 
+
+## Categorization 
+Additional information about the domain, sometimes you want to add to the dataset some knoldegne of the domain you are analyzing 
+some times you have also continuous variables, and uoi have to study the slot and defining when there is a change (increase, dcrease, ioncrease) 
+depending on the data you may want to extract different informatio that can be useful -> but you are adding complexity, feeatures to te original one that must be treated
+
+## Variable selection 
+problem automatically solved by random forest alghoritms, they learn the feature important to you, but in another case you don't want to spend complexity and add features to your model 
+this is a problem cause sometimes the dataset has a huge amount of features, and in the end only few of them are really helpful-> 10/15 variables
+
+depending on the type of the variable and the type of target variable  you can select a different statistic test that measure the correlation between the target and the variable
+
+additional metodology to analyze the correlation
+
+
+sometimes you cannot use all the feature 
+the motivation may contain personal information 
+feature seletion independent from your decision 
+
+## PCA 
+group of methods to automatically reduce the dimensionality of your dataset and at the same time finds a set of feature not correlated with each other
+you are able to reduce, select feature and the feature are not correlated
+
+reduce dim by forming new value that are a linear composition of the original ones (main component) 
+at maximum the same number of the original ones 
+only a small portion of your variable contains the information you need 
+
+find two new features that better describe the distribution of the data in the space
+ PC1 will describe the set of data in a way that you can continue the analysis
+
+ ## correlation and stability 
+ assure that your model will be stable
+
+
+trade-off: PCA if your are not interested in interpretaibility 
+if you need to have a score easy to investigate/interpret, you have to avoid PCA
+
+
+# DESCRIPTIVE ANALYTICS FOR FRAUD DETECTION
+unservised learning techniques
+unsupervides aims at finding anomalos behavior that deviates from the norm of the dataset
+you have to define the norm ( average behiuour of dataset of customer)
+
+unsupervised , you can identify from know cyber attack 
+
+techiques relevant when you have NO labels
+
+define your norm, define the AVERAGE behavior of your dataset 
+
+procedure similar for outliers in preprocessing, you can canalyze them in one or multi dimension 
+
+
+knowledge to verify what you have found
+
+statistical outlier detection 
+-> z-score
+-fit a distribution 
+these two are the same saw before
+-> break point analysis
+instra-account fraud detection method -> break point a change in the behavior
+(see slides) 
+training part and testing part 
+studying the difference -> find something that needs to be investigated
+->peer-grouo
+INTER-account techiques
+-> association rule analysis 
+association  between two different items in the dataset 
+
+
