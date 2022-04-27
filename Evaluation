@@ -72,3 +72,61 @@ the facts counts, the opinion not
 Tyoical presentation errors 
 
 
+
+
+
+
+TESTIMONY AS A witness
+
+
+????
+
+checking poreviour records of the judge 
+
+CROSS-EXAMINATION is hostile 
+
+
+Cloud: the reosources are shared
+
+
+
+
+
+CLOUD FORENSICS 
+---
+INCIDENT RESPONSE
+
+in the case of forencisc. structure incident respons mechanics is importat to dive through further improvement of the system 
+one of the requirements: importamt to learn and document
+example: suppose there is an email worm 
+and is exploiunt some vulnerabities and propagating
+first issue: overloading network -> what can we do? disconnect the internet/company internet, shut down the email system
+
+we have to find a trade off between the loss of functionality and containing of the incident
+the person making this decision 
+
+good incident response should indicate the action to take for an incident of this severity 
+and specify the personnel who have the responsability to make decisions and detail how they can be quickly contacted
+
+personal important to detect what is happening, keep a documentation and archive evidence
+2 terms: 
+-ARTIFACT: anaything that is out of place, that can be involved in an attack -> found analysing
+-CSIRT: team 
+PSIRT: product security -> on our product, response to out customer
+-constituincy: who is CSIRT by this CSIRT
+-incident
+-triage
+-vulnerability 
+
+-detecting incident. detected in two ways
+there is a system that reports, users that report something is happening or something is on 
+finding something weird for example
+users trained 
+
+automated tools all work, effectiness depends on accuracy and correctness of the patters
+
+the fact that an incident has happened means that the company could have done something better
+
+
+
+

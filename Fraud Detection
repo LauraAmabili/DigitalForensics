@@ -212,3 +212,34 @@ INTER-account techiques
 association  between two different items in the dataset 
 
 
+
+FRAUD DETECTION
+in the previuour lecture we explodred the unsupervised, the main difference with rw supervised 
+you don't have any label related to the custom value you want to predict/classify
+we have to extract the norm
+main challenge of unsupervised-> anomaly DETECTIONyou want to detect something that is outling with the norm itself
+allows you to extract knowledge
+started from graphic techniques-> something that outlies from the nrm, group of points
+statistical: this time exploiting statistical techniques
+-break point: intraaccount , you decide testing window and you test if the new distribution is similar to the preboous one
+-peer-group, seasonality, data that change during time 
+-
+
+
+CLUSTERING: main unsupervised learning technique
+process that requiresa a good amount of data, 
+group data in different set 
+norm: big cluster of data
+anomalies: small cluster that is away from the normal 
+
+
+Hierarchical and nonhierarchical
+core element of clustering techiques: distance matric
+
+in order to cluster element you have to compute the similarity between two elemnt 
+-euclidea,/minkowski 
+
+for continuois variables ok -> euclidian, pearson correlation 
+categorical variables -> binary variables, zeo or one depending on if this particular features is present or not in your data
+
+SMC computes number of identical matches between values
