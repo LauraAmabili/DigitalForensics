@@ -1,7 +1,107 @@
-# perso prima lezione fraud :( non ho committato
+## 17/03/2022
+Fraud detection: 
+
+what is a fraud? 
+criminal activity-> criminal deception intended to resuper in financial or personal gain. 
+main driver of the froeds. If we use this definition to understand 
+
+fraud is an uncommon, well-considered, imperceptibly concealed, time-evolving and often carefully organized crime. 
+There 5 are the main challenges you have to cope with. 
+It is not an isoleted phenomena, it is a social phenomenal, it comes to expenses of the victim. 
+Who is the victim? organization, person, society. 
+
+UNCOMMON: only a minority of cases concerns fraud, of which only a limited number owill be known to concern fraud. 
+Only a minority of the cases in your datased concern fraud, only a small percentage of your datased is related to the class fraud. 
+but, besides that, of this part, only a limited number will be known to concern fraud. Some of them may be not detected, but they are in your dataset. 
+You will have to exploit as much as possible these few. 
+-detect fraud is difficult: fraudulent cases are covered by the legitimate ones.
+-learn from historical cases is difficult: since only few examples are available. 
+
+WELL-CONSIDERED AND IMPERCEPTIBLY CONCEALED: the attacker tries to blend in the legitimate one. 
+Fraudsters try to remain unnoticed and covered, blend in frauds, not behave different from non-fraudsters.
+Fraudsters hide very well by well-considering and planning how to precisely commit fraud. Frauds are not impulsive and unplanned. 
+mimic attacks, the attacker tries to mimic the behave of the user. 
+frauds that evade from detection systems. 
+
+TIME-EVOLVING: fraudsters adapt and refine their methods to remain undetected. Fraud detection systems improve and learn by example. 
+The adversary is always one step further. Fraudsters techniques evolve in time aklong with or better ahed of fraud detection mechanisms. 
+
+CAREFULLY ORGANIZED CRIME: every single fraud cases is not an isoleted event. 
+Fraudsters: do not operate independently, involve complex and organized structures. To detect fraud the context should be taken into account. 
+
+
+why do people commit fraud: 
+Basic driver: potential monetary gain or benefit. 
+-MID or GRiD: difficult financial situation, financial gain.
+Fraud triangle: basic conceptual model that presents the factors that explain the drivers for an individual to ommit fraud. 
+-Rationalisation, opportunity, motivation -> we have to reduce the opportunity driver. 
+
+Fraud categories: 
+Banking and credit card: one of the most done, economic motivation. Unauthorized taking of another's credit. 
+1. create fake personal information and steal much money possible, steal from a financial istritution
+2. obtain data of the bank account of an user and perform fraud
+
+Insurance fraud: 
+1.sell fake insurance
+2. exploiit some condition to earn money
+
+Counterfeit: imitate intended to be passed off fraudulently or deceprively as genuine-> concerns valuable objects. 
+
+Product warranty fraud: fraudulently claiming compensation or remuneration based on a product warranty. 
+
+Healthcare fraud
+Telecommunications fraud: phishing, scamming, cloning, superimposition fraud. -> super easy to exploit, no phisical attack. Just the voice. 
+Money laundering: criminal activity and make them appeal as legal. 
+Click fraud: legal links on a website in order to add the number of clicks. 
+Identity theft. 
+Tax evasion. 
+Plagiarism. 
+
+Frauds impacts -> need to invest up to date defense infrastructures. 
+
+### Anti-fraud strategy
+
+Fraud prevention and fraud detection 
+-Expert-based approach: 1. rule-based engine disadvantages -> expensive to build, require manual input, difficul to maintain and manage 
+fraudsters can lerarn the rules and circumvent them, new frauyd patterns are not automatically updated
+-automated fraud detection systems: how ever expert based remain important top build an effective 
+first expert based -> then automated 
+
+Fraud managment: all the activities that must take place after a fraudolent activity has been detected and confirmed 
+
+-corrective measure: resolve and correct the consequencies 
+-preventive: to prevent 
+
+
+step futher-> automatated base -> frauds becomes earies to detect the more time has passed. 
+the more time passed, the more a fraud mechanisms is used, if a fraud is done and it is not detected, it will be done again. 
+the more data you have the mor eyou can build systems 
+
+the more a fraud schema is used , the more easier to detect it is if time has passed
+fraud paterns becomes more apparent, statistically easier to detect
+
+
+DATA DRIVEM FRAUD DETECTION
+like any other security mechanisms, there is a cost ofr operating 
+if a label is correct and you r are reducing the loss, if the label is cnot correct: you have labeled as fraud a legit transaction
+for every false positive you have a costsame for every false negative
+but we cannot really investigate every transaction
+in general we have a limited invastigation capacit
+
+FRAUD DETECTION techniquesapprocahes are adopting powerful statostically-based methodologies and analyzing massive amounts of data
+fraud remains hard to detect. 
+
+Why it is challenging to detect fraud? 
+fraudsters adapt theirs approaches to commit fraud without being exposed, probe fraud detection and prevention systsmes to understand their functioning to discover their weaknesses
+Fraudsters develop advances strategies to cover/blend in their tracks to avoid being detected 
+
+
+
 ## 18/03/2022
 ### Fraud
 
+unsupervised leanring techniques-> they do not require labeled observations
+learn from historical observationallow detecting novel fraud patterns 
 
 supervised look inside the huge amount of data 
 unserivised: how they behave. 
@@ -243,3 +343,15 @@ for continuois variables ok -> euclidian, pearson correlation
 categorical variables -> binary variables, zeo or one depending on if this particular features is present or not in your data
 
 SMC computes number of identical matches between values
+
+
+
+
+
+HIERARCHICAL CLUSTERING 
+NON HIERARCHICAL CLUSTERING
+vedi slide/Tancredi 
+
+
+the final result of clustering technique is a label dataset
+use the output and train a supervised learning one with the lbel of the cluster techniques
