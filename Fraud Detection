@@ -1,4 +1,5 @@
 ## 17/03/2022
+Fraud lection 1 
 Fraud detection: 
 
 what is a fraud? 
@@ -98,16 +99,22 @@ Fraudsters develop advances strategies to cover/blend in their tracks to avoid b
 
 
 ## 18/03/2022
-### Fraud
+### Fraud lection 2 
 
 unsupervised leanring techniques-> they do not require labeled observations
 learn from historical observationallow detecting novel fraud patterns 
+detect the differnce between the norm and the fraudulentcases
+
+limitation of supervised: impossible to see the future, supervised is a train of historical previous cases
+higher number of false negatives 
 
 supervised look inside the huge amount of data 
 unserivised: how they behave. 
 extract features from data 
 such kind of systems are not enough , complement the system with supervised.
 learn the diffrence between the known 
+
+chain and combination between the system ->active learning systme: combination of supand unserivised fed with the feedback of an analyst of a group who is continously improving your system
 
 un vs sup .> you want to apply unservised every time you ahve a data set but not labeled
 supervaside data with label legitimed and unlegitimed -> predict, detect and estimate some features
@@ -128,12 +135,36 @@ Fraud Confirmation: not, ok this is not fraudolent, change the label, retrain yo
 Fraud Prevention : now we have to prevent these transaction
 
 feedback loop-> you have to automatize all these process and we will automatize this process-> you have to update all your models and systems (the supervised and unsupervised to mathc the new pattern) 
+the preprocessing step is the step that occupies the 80% of yoru time 
 
 
 Fraud analytics process model 
+iterative, if you encounter a problem you have to go back to another 
+identify data sources: depends in which domain you are going to work 
+select the data, store in a consistend way 
+clean the data -> issue
+transform the data-> ML model wants the data in a particular form ( numerical and categorical into something that can be treated)
+analyze -> interpret and evaluate 
 
 
+Analyzing output 
+what is the minimal requirement of your system? 
+in the end you may want to detect something that was not initial in the dataset 
 
+successful fraud analytics model ->
+accuracy-> detection power and corrrectness of the statistical model 
+we need to make sure the model generalized well and is not overfitted to the historical date set 
+interpretability-> since th eoutput must be investigated, you want to have an outout that is understandable by the human 
+operational efficiency->  cases are evaluated in real time
+fraud managment -> RISK ( statistical and economical evaluation of the exposure to damage because of the presente of vulnerabilities and threats) 
+security vs cost balance
+
+
+there are soe data that you cannot analyze due to the legislations and normatives. 
+
+
+be careful about the costs 
+SKEWNESS of the dat a
 Fraud 3
 
 Machine learning for Fraud Detection 
