@@ -168,9 +168,11 @@ SKEWNESS of the dat a
 Fraud 3
 
 Machine learning for Fraud Detection 
+Analyticts techniques with focus on the fraud practitioner's perspective. 
+
 pefrorm detection 
 
-Real data is typically dirtu, full of inconsistencies, incompleteness and duplication, from messy data you get messy analytical models
+Real data is typically dirty, full of inconsistencies, incompleteness and duplication, from messy data you get messy analytical models
 so we have to apply data filtering mechanisms
 first step of data anlyting preprocessing part
 data preprocessing step -> 80% of your time
@@ -181,6 +183,7 @@ Even the slightest mistake can make the data totally unusable and the results in
  
 -transactional data: structured and detailed information captyring the key characteristics of a customer transaction
 Summarized over longer time horizons by aggregating it -> they are meaningful when interpreted individually and furthermore their interaction is useful for fraud detectio  and anti money laundering
+
 -types of data elements
 continuous data: defined on an interval ( limited and unlimited) 
 categorial:all the set of data defined on a category  
@@ -190,8 +193,10 @@ categorial:all the set of data defined on a category
 
 -sampling: take a subset of historical data to build an analytical model 
 we not analyze directly the full data set because the key requirement for a good sample is to be representative fot the future entities 
-
-
+-> timing and representativeness are crucial. 
+Sampling timing and bias-> choosing the optimal time window, but it is a trade off between lots of data that gives you a mor robust analytical model and recent data that are more representative
+An average period to get as accurate as possibile a picture of the target population 
+Sampling bias should be avoided even if not straighforward
  
 Take a subset of historical data to build an analytical model.
 With the availability of high-performance computing
@@ -203,27 +208,54 @@ why not analyze directly the full data set?
   model and select sample that target the avaerage period and behavior, i want an average picture
   but this is not an easy task 
 
+
 what can I do ? 
 -build separate models for homogenous time frames or different frames-> complex and demanding solution
--sampling observetions over a period covering a full business cycle and build a single model
+-sampling observations over a period covering a full business cycle and build a single model
+  a. cost of reduced fraud detection power since less tailored to a particular data frames
+  b. less complext and costy to operate
 
-Stratified sampling: a sample is taken according to predefined strata-> stratifying according to the target fraud indicator-> sample will contain exactly the same percentages of (non-) fraudulent transactions as in the original data
--> stratification applied on predictor variables-> resemble the real product transaction distribution 
+Sampling has a direct impact on the fraud detection power 
 
+
+adventage of sampling: you have a smaller dataset, faster in creating your model and being ready to update it 
+Stratified sampling: a sample is taken according to predefined strata-> 
+a. stratifying according to the target fraud indicator-> sample will contain exactly the same percentages of (non-) fraudulent transactions as in the original data
+b. stratification applied on predictor variables-> resemble the real product transaction distribution 
+
+
+# visual data exploration 
+-NO PERIODICITY
+-time good indicatyor
+-distribution good indicator
+
+fraud transaction can be hidden inside usual transaction 
 
 
 Visual data exploration is important, gives you an initial insights into the data, you can use plots
 Then inspect some basic statistical measurements -> calculate them separately for each of the target classes to see whether there are any interesting patterns present 
 
+# exploratory statistical analysis
+-basic statistical measurements (averages, standard deviations, minimum, maximum, percentiles)
 -basic descriptive statistics
 descriptive statistics provide basic insight for the data, they should be assessed together in support and completion of each other
--MEAN AND MEDIAN
--VARIATION/STANDARD VARIATION 
--PERCENTILE VALUES
--MODE
-
+a.MEAN AND MEDIAN
+b.VARIATION/STANDARD VARIATION 
+c.PERCENTILE VALUES
+d.MODE
 -specific descritive statistics
--SYMMETRY OR ASYMMETRY OF A DISTRIBUTION -> harder to interpret: limits their pratical use, sometimes it is easier to assess these aspects by inspecting visual plots of the distribution of the involved variables
+. SYMMETRY OR ASYMMETRY OF A DISTRIBUTION -> harder to interpret: limits their pratical use, sometimes it is easier to assess these aspects by inspecting visual plots of the distribution of the involved variables
+
+BENFORDS'S LAW -> visual and numerical data explorastion technique
+it describes the frequency distibution of the first digit in many real-life data strategies
+based on the idea you can have a metric that express the destribution 
+Compare the expected distribution followinf benfords's law with the one provided by the company(with the observed distribution in a data set)
+Strong deviation fromn the expected frequencies may indicate the data to be suspicious and manipulated
+It can be used as a screening tool for fraud detection
+It is a partially negative rule, if the law is not satisfied, then it is probable that the involved data were manipulated and further investigation or tsting is required, 
+conversely, if a data set compies, it can be still fraudulent . 
+A sufficient amount of data related to an invidudal casa need to be gathered. 
+
 
 -missing values
 Some analytical techniques (e.g., decision trees) can deal directly with missing values. Other techniques need some additional preprocessing.
@@ -235,58 +267,82 @@ b. Statistically test whether missing information is related to the target varia
 1. if yes, then we can adopt the keep strategy and make a special category for it
 2. if not, one can depending on the number of observations available- delete or replace
 
+
+(fraud 4 - 01/04/22 )
 -outliers 
 extreme observations that are very dissimilar to the rest of the population, can be valid or invalid , unvariate(one dimension) or multivariate(multiple dimensions)
   UNIVARIATE OUTLIER DETECTION AND TREATMENS
   .minimum and maximum values for each of the data elements 
-  .graphical tools: histograms, box plot, z-scores
+  .graphical tools: 
+  histograms, 
+  box plot(you rappresent on a scale quartils, first and third, the media and the maximum and minimun, if they are inside the quarttile range- whatever is over is the outliers),
+  z-scores ( reducing the outliers to a threshold you are selecting- impose both  LOWER AND UPPER LIMIT ON A VARIABLE AND ANY VALUES BELOW/ABOVE ARE BROUGH BACK Of these limits )
   compute the distribution, represent it on an istogram 
   if inside the range, plot all the data on this line, you compute statistics on your data, then you plot the rane first/last quartile-> how much of your data is inside this area
   ho wmany stanrdard deviation an observation lies away from the mean-> you check for each single instance how much differs from the media in terms of standard deviation 
 
-  MULTIVARIATE OUTLIER DETECTION AND TREATMENS
+  MULTIVARIATE OUTLIER DETECTION AND TREATMENS (now you are considering multiple features at the same time )
+  fit the features in a multidimensional space -> can be seen as a vector
   -distance between different vectors
   .fitting regression lines and inspecting the observations with large errors
   .clustering or calculating the Mahalanobis distance
 
 
--variouys schemes exist to deal with outliers 
-  for invalid observations one could treat the putlier as a missing value
-  for valid obs impose both a lower and upper limit on a variable and any values below/above are brought back to these limits 
 
+
+-variouys schemes exist to deal with outliers 
+  .for invalid observations one could treat the putlier as a missing value
+  .for valid obs impose both a lower and upper limit on a variable and any values below/above are brought back to these limits -> they are information that we don't want to loose
+   Truncation example 
+
+
+Not all invalid values are outlying and may go unnoticed if not explicitely looked into
 Construct a set of rules formulated based on expert knowledge 
 find relation you know must be present in your dataset
-constraint that apply 
+constraint that apply to the combination
 
 take explicit precautions
 
 theser kind of inconsistences can by find by experience
-## preprocessing
+
+# PREPROCESSING 
+
 extremly careful to treat these values, you have to ducment by addign a feature that specify because 
 it is missing a valueif you start a preprocessing in the wrong way you cannot be more able to detect the anomaly 
+
 
 another problem: represented by this image : INSERT image
 compare two value of your dataset -> the distance ( eucledian, manhattan..)
 the problem of this computation is that it is not correct ? 
 The scale are differt!!! doesn't make any sense 
 u have to standardize your features !!
-standardize data-> scaling variables to a similar range
--mix/man standardize
--z-score 
--decimal scaling 
+
+
+## standardize data-> 
+scaling variables to a similar range
+-mix/man standardize ( max and min of the current distribution and rescale everything based on that)
+-z-score (calculate che z scores, compute min, compute standard deviation, keep the distance )
+-decimal scaling (divide by 10 to put all the features in the same scale)
 
 ## Categorization 
-Additional information about the domain, sometimes you want to add to the dataset some knoldegne of the domain you are analyzing 
-some times you have also continuous variables, and uoi have to study the slot and defining when there is a change (increase, dcrease, ioncrease) 
-depending on the data you may want to extract different informatio that can be useful -> but you are adding complexity, feeatures to te original one that must be treated
+Additional information about the domain, sometimes you want to add to the dataset some knoldegne that directly derive from of the domain you are analyzing 
+some times you have also continuous variables, and uoi have to study the slot of the c variables and defining when there is a change  in the slot (increase, dcrease, ioncrease) 
+depending on the data you may want to extract different informatio that can be useful -> but you are adding complexity, adding feeatures to te original one that must be treated
 
 ## Variable selection 
 problem automatically solved by random forest alghoritms, they learn the feature important to you, but in another case you don't want to spend complexity and add features to your model 
 this is a problem cause sometimes the dataset has a huge amount of features, and in the end only few of them are really helpful-> 10/15 variables
 
-depending on the type of the variable and the type of target variable  you can select a different statistic test that measure the correlation between the target and the variable
 
+## filters
+are a very handy variable selection mechanisms
+allow a quick screening of which variable should be retained
+depending on the type of the variable and the type of target variable  you can select a different statistic test that measure the correlation between the target and the variable
+PEARSON correlation
 additional metodology to analyze the correlation
+Filters allow reduction in the number of dimension of the data set early in the analysis 
+
+Drawback: work univariayely and do not consider correlation between the dimensions individually
 
 
 sometimes you cannot use all the feature 
@@ -294,57 +350,115 @@ the motivation may contain personal information
 feature seletion independent from your decision 
 
 ## PCA 
+PRINCIPAL COMPONENT ANALYSIS
 group of methods to automatically reduce the dimensionality of your dataset and at the same time finds a set of feature not correlated with each other
-you are able to reduce, select feature and the feature are not correlated
+you are able to reduce, select feature that you want and the feature are not correlated
 
 reduce dim by forming new value that are a linear composition of the original ones (main component) 
 at maximum the same number of the original ones 
 only a small portion of your variable contains the information you need 
 
-find two new features that better describe the distribution of the data in the space
+the info contained in the original data set can be summerixzed by a limited number of components 
+
+
+find two new features that try to better describe the distribution of the data in the space
  PC1 will describe the set of data in a way that you can continue the analysis
+ they are ortogonal-> not correlation between of them 
 
  ## correlation and stability 
  assure that your model will be stable
+ when we analyze the stabiltu we refer to correlation between variables
+
+ it means that when you have to select the feature, the most important one, you have to check that they are not correlated, otherwise 
+ the model is not stable -> we achieve bad result 
 
 
+if you apply PCA-> your model will be stable
+
+should we apply PCA always? 
+
+qith pca you loose the interpretability of the features 
 trade-off: PCA if your are not interested in interpretaibility 
+the problem is that interpretability is one of the key aspect /parameter to evaluate the effectivness of a fraud detection methods
+everything has to be evaluate at the end by an human 
 if you need to have a score easy to investigate/interpret, you have to avoid PCA
 
 
 # DESCRIPTIVE ANALYTICS FOR FRAUD DETECTION
-unservised learning techniques
+## unservised learning techniques -> descriptive anaytocs for fraud detection 
 unsupervides aims at finding anomalos behavior that deviates from the norm of the dataset
-you have to define the norm ( average behiuour of dataset of customer)
+you have to define the norm ( average behiuour of dataset of customer/ or behavior of the average customer)
 
 unsupervised , you can identify from know cyber attack 
 
-techiques relevant when you have NO labels
+you want to identiy an outlier detection
+
+techiques relevant when you have NO labels!
+fraudsters is dynamically adapting, organization is at the beginning 
+
+
 
 define your norm, define the AVERAGE behavior of your dataset 
+find a way to model an average behavior
+
+the norml depends on the domain you are analazing 
+when you define a norm you are defining the boundering of whay is normal and what is not 
+
+
+since it is unsupervised, what ever you find is knowledgne that canbe related or Not
+
 
 procedure similar for outliers in preprocessing, you can canalyze them in one or multi dimension 
+disadvantges: less formal and limited to a few dimensions, require active involvement of the end user, for a sarge dimensional data set, is cumbersome
+
 
 
 knowledge to verify what you have found
 
-statistical outlier detection 
+1. statistical outlier detection 
 -> z-score
 -fit a distribution 
 these two are the same saw before
 -> break point analysis
-instra-account fraud detection method -> break point a change in the behavior
-(see slides) 
+
+intra-account fraud detection method -> break point indicates a sudden change in the behavior
+a. define a fixed time window
+b. split into an old and new
+c. you compare them 
+detect if there is a change in the behiavour and study the difference, if it is higher than a threshold you set, you start investigate
+(see slide) 
 training part and testing part 
 studying the difference -> find something that needs to be investigated
-->peer-grouo
+->peer-group
 INTER-account techiques
+group of account that behaves similarly, elements in your dataset that are close together,  when the behaviour deviates from the peer created, anomaly 
+a. peer group identification
+  -distance 
+  -ask experts
+  -select number of peers is a problem (tto many all the dataset, depends on the locality of the model you want to build)
+b. anomaly valuation
 -> association rule analysis 
-association  between two different items in the dataset 
+detect frequently occurring relationship between items
+association  between two different items in the dataset
+ you define association rule X sub set of items and Y subset of items-> statoistical measure of the strengh 
+
+
+ INSURANCE FRAUD EXAMPLE 
+ Goal: find frequentelly occurring relationships/associations rules between the various parties involved. 
+compute a set of statistics
+1. identify frequenty item strategies
+suppert(X) -> percentage of total transactions in the database that containts the item set 
+2. derive association rules -confidence- strong enough to be considered
+confidence(X->Y)
+
+
+
+
 
 
 
 FRAUD DETECTION
+
 in the previuour lecture we explodred the unsupervised, the main difference with rw supervised 
 you don't have any label related to the custom value you want to predict/classify
 we have to extract the norm
@@ -357,7 +471,8 @@ statistical: this time exploiting statistical techniques
 -
 
 
-CLUSTERING: main unsupervised learning technique
+# CLUSTERING
+-> main unsupervised learning technique
 process that requiresa a good amount of data, 
 group data in different set 
 norm: big cluster of data
