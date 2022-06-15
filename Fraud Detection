@@ -473,31 +473,144 @@ statistical: this time exploiting statistical techniques
 
 # CLUSTERING
 -> main unsupervised learning technique
-process that requiresa a good amount of data, 
+summarize adv and dis of unservised 
+split your data into group such that you want to max similraty intragroup and difference betweek element from different groups
+
+
+process that requiresa a good amount of data
 group data in different set 
-norm: big cluster of data
+if you have a lot of fetures apply feature selection 
+norm: big cluster of data 
 anomalies: small cluster that is away from the normal 
+this is what you want them to analyze to understand it it is frudolent or Not
+
+this single ^^ anticipates one of the main challenge of clustering, a super good tipycal result is in this example
+the interesting fact about clustering it works -> you are gonna pobtain cluster in any change
+the change is to find a way to understand if the cluster is meaningful or not, if it is relevant
 
 
-Hierarchical and nonhierarchical
-core element of clustering techiques: distance matric
+final result of clustering technique-> something that was not relevant 
 
+
+Clustering techniques can be devided in Hierarchical and nonhierarchical
+Hierarchical you have: agglomerative/divisive 
+NON Hierarchical: 
+
+
+core element of clustering techiques: distance matric!!
+
+Aim of clustering: group observation based on similarity 
+distance metric is needed to wuantify similarity !
 in order to cluster element you have to compute the similarity between two elemnt 
--euclidea,/minkowski 
-
-for continuois variables ok -> euclidian, pearson correlation 
-categorical variables -> binary variables, zeo or one depending on if this particular features is present or not in your data
-
-SMC computes number of identical matches between values
+-euclidea,/minkowski(depending on the parameter you may obtain a manhattan or euclidean) -> be careful you want to standardize
 
 
+for continuois variables ok -> euclidian, pearson correlation or cosine measure 
+categorical variables -> binary variables, zero or one depending on if this particular features is present or not in your data
+  a. Simple matching coefficent -> SMC computes number of identical matches between values of a variable(take a distance and another distance and you compute how many times are different)
+  b. jaccard index -> similarity when they are both set to one 
+  -categorical with more than two values
+  first option: 
+  -> transform them in dummy 0/1 values 
+  -> coarse classification
+  second option: 
+  -> apply simple matching coefficent 
+  -> count the number of identical matches 
 
 
-
-HIERARCHICAL CLUSTERING 
-NON HIERARCHICAL CLUSTERING
-vedi slide/Tancredi 
+You have to do a trial and error approach
+Continuous and categorical variables mix -> due opzioni 
 
 
-the final result of clustering technique is a label dataset
-use the output and train a supervised learning one with the lbel of the cluster techniques
+## Clustering Hierarchical 
+Divisive and agglomerative depending on how you perform the clustering
+Divisive: you start by considering all the elemnts inside your dataset as beyond one single còluster  and then you start analyzing the similarity between the elements to split them until you reach one element
+Agglomerative: you assign one single cluster to each element, compute similarity and you start group them 
+
+Distance between clusters -< different methods (you can call a library in python)
+
+single: most closest point 
+complete: defined by the distance between the two most different
+average: all the points
+centroid: the mean 
+
+Final result will be something in between the two step, find different result and test them 
+
+main problem of distance: not efficient, you have to visit the entire dataset 
+
+NUMBER OF CLUSTERS 
+-dendogram: keep track of all the possible merge, and put in a diagram the distances 
+-screen plot: 
+
+if have comunque to decide if it is correct or not 
+using a different technique would result in a different result , why? 
+_____ non ho capito so solo che succede se tipo uso complete invece di average
+
+
+hierarchical -> advantage: number of cluster does not need tobe specified, allows to cluster data without knowing a priori the number of cluster to select 
+Disadvantage: they do not scale at all, the higher the amount of data, the higher the computation 
+the interpretation of the cluster is often subjective -> you have to have an expert that evaluates your result
+
+
+## Clustering Non Hierarchical 
+basic techniques that can be used, the nmber of features are not so used and i want something that can be interpret by an analyst 
+K-MEANS: 
+aopply each observations to the closest centroid 
+step 2: recompute centroids 
+reassign observation 
+
+
+continue until k into distributoion or after a limit number of iterations
+
+disadvantages: you have to know the number of clusters ! (or you have to try all the possible combinations )
+the final result depend on where you put the position of centroid (on where you put the centroid)
+
+
+SOM (self organizing maps) 
+NN that has only two layer ( input and output layer) 
+Allows to visualize and cluster high dimensional data on a low-dimensional grid of neurons 
+each inpout is connected to the all possibile outputh with a set of weights 
+BMU most similar vector of the input you have provided on the basis 
+we select the BMU 
+once we have selected it we are going to update all the weights to match the best matchin until
+try to map all the neibg to the distribution of your original dataset 
+
+
+iterative procedure
+1.compute the BMU that is the most similar vector to the input that you have porovided on the basis of the euclidian distance 
+2. update all the wights in order to match the BMU -> stretch to fit as much as possible the original distribution 
+
+you will have a stable solution at the end 
+a lighet part  / darker part will rappresent clusters 
+
+
+## semi-supervised clustering 
+
+put constraints on how you are going to cluster elemtns inside your data 
+put labels or minimun distance between particular pairs of elements-> procedure easier and faster
+you are guding the cluster procedure
+this can be done when you have information provided bu experts
+
+you are going to label all your istrances with already a preformed cluster that you know from a precedent knowledge
+
+
+One-Class SVM 
+
+try not to cluster your data in different group, theu try to distinguish what is the norm to what is a outlier 
+they try to do this by trying to rappresent your data in a two dimensional space and find the best hyperplane 
+
+
+PAINFUL PART NOW !! yay 
+it is difficult to understand if final result is good or not, try multiple things to understand 
+
+best solution: statistical measure
+compute intersimilarity/intra 
+or SSE (iterate between different solutions)
+
+or the other solution is to manually analyze final output and block the characteristic we have obtained. 
+
+
+final result of cluster technique is a label dataset (final data is a cluster to which each single labelbelong ??)-> use the output of the unsupervised (cluster)and train a supervised on the basis og the label of the cluster technique 
+-> interpret the result! 
+
+# Predective analytics for fraud detection 
