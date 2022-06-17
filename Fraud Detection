@@ -777,6 +777,121 @@ In the fraud setting?
 you never use network with more than 1 or 2 hidden layers -> capable of approximating any function to any desided degree of accuracy on a compact interval 
 
 
+(fraud lesson 6 )
 
 
+NN are able to model complex pattern-> generalization of logistic regression 
+Neuron that implement a logistic or linear regression depending on the function 
+the function is called act func 
+Basic core unit of a NN as a neuron that receive as input thevalues of the feature of the dataset ( preprocessed) and then 
+you are gonna wakes them with the same paramenter of the logistic function 
 
+weights of the node 
+For each single node of a NN you are combining them with different weights 
+
+We generalize such concept and we alyze what is a MLP, just a combination of neurons organized in layer. 
+you have an inpout layer, hidden ( feature extractionb layer), and putput layer 
+you are creating feature that are combination of the weights 
+
+we can have different activation function 
+and even if neuron differ from activation function, you have the same activation function per layer 
+
+When we think about the general usage, whaty happens is that you have to select the number of hidden layers and hidden neurons in the hiddel layer
+in fraud we don't have complex patterns, ONE hidden layer is enough to approximate the majority of the function. 
+
+we have to preprocess the data in the correct form, NN appreciates zeros and ones. 
+
+We have to find a way to find the value of the weights, in the NN the job of finding optimal parameters is complex. 
+We have to follow an iterative function that minimizes 
+
+Continout -> MSE
+Binary -> Maximum likelihood
+
+start from random weights and then adjsust them 
+
+problem? the cost function it is usually a non convex function, menas that may have not a global minimum, if you start from the wrong weights you can fall to the local mimumum?? e quindi??
+
+preliminary training -> start from different set of weights, start the optimization and continui only with the one that gives best intermediate solution 
+
+The optimization procedure then continues until the error function shows no further progress/the weights stop changing substantially(probably reached a minimum)/after a fixed number of optimization steps (Epochs)
+
+more hidden neurons will be required to model the pattern if it is complex ( it is a linear relation between input/output)
+how to tune the number of hidden neurons? 
+1. Split the data into a training, validation, and test set.
+2. Vary the number of hidden neurons
+3. Train a neural network on the training set
+4. Measure the performance on the validation set.
+5. Choose the number of hidden neurons with optimal validation set performance.
+6. Measure the performance on the independent test set.
+ 
+Neural networks can model very complex patterns and decision boundaries in the data -> They can even model the noise in the training data -> Overfitting
+1° Option
+● Training set -> estimate the weights.
+● Validation set -> independent data set used to decide when
+to stop training and avoid this overfitting. 2° Option
+Weight regularization: keep weights small in absolute sense to avoid fitting the noise in the data.
+● Add a weight size term to the objective function of the neural network.
+ 
+
+you relate input/output in a mathematical copmplez way -> black box
+you have to find a way of opening it and interpret the results 
+
+
+this three can be applied to any ML black box
+1. variable selection 
+
+undestand the variable that are activately contributing to the output 
+in  linear and logistic you have p-value, in NN no p value 
+possible solution: is a GRAPHICAL one ( analyzed by humans)-> HINTON DIAGRAMS -> size and color of the square to understand the diagram 
+(Performance-driven) Selection: Backward Variable Selection
+It does not offer a clear insight into its internal workings. The relationship between the inputs and the output remains nonlinear and complex.
+
+2. rule extraction 
+Extract if-then classification rules, mimicking the behavior of the neural network:
+● Decompositional technique: decompose the network’s internal workings by inspecting weights and/or activation values.
+● Pedagogical technique: consider the neural network as a black box and use the neural network predictions as input to a white-box analytical technique such as decision trees
+○ Can essentially be used with any underlying algorithm
+ 
+
+
+3. two stage models
+
+
+# Support vector machine 
+tries to separate the two different classes 
+you have an unique -- is not convex 
+extra objective to find the best hyperplane that maximues the distance between the two classes you are analyzing 
+
+you have a quadratic function that has an unique global min 
+
+once you habve minimize thi syou really find the optimal value 
+
+in real world we have nonserparable case -> dataset that contains non separable
+mapping between different hyperspace
+
+how to tune it? same procedure we have already seen: 
+1. Partition the data into 40%⁄30%⁄30% training, validation and test data.(must be indipendent set- no coomon elemtns )
+2. Build a SVM classifier for each parameter combination from the set.
+3. Choose the combination with the best validation set performance.
+4. Build a SVM classifier with the optimal parameter combination on Combined training + Validation data set.
+5. Calculate the performance of the estimated classifier on the test set.
+ 
+
+still a BB, how to interpret it???
+-variable selection (backward)
+-decomposition rule extraxtion approaches 
+
+
+# ensemble methods 
+Aim at estimating multiple analytical models instead of using only one.
+
+methods that overfit !we use decision tree 
+
+1. aggregating - subsample your dataset + build a classifier 
+2. boosting 
+3. random forests of decision tree that are built randomly on a random subset of your dataset 
+the more randomness the higher performance we are going to obtain 
+
+
+we built N models, how to evaluate the performance of such methods? 
+DO NOT MIX TRAIN VALIDATION AND TEST 
