@@ -1,9 +1,9 @@
 # Fraud Analysis and Detection 
-### 17/03/2022
-Fraud lection 1 
+
+
 
 ## Fraud detection 
-
+#### 17/03/2022 Fraud lection 1 
 
 what is a fraud? 
 criminal activity-> criminal or wrongful deception intended to result in financial or personal gain. 
