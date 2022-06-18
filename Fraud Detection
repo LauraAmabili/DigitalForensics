@@ -63,7 +63,7 @@ Plagiarism.
 
 Frauds impacts -> need to invest up to date defense infrastructures. 
 
-### Anti-fraud strategy
+### ANTI-FRAUD STRATEGY 
 
 These mechanisms aim to reduce the losses since the frauds are prevented and dected and fraudsters tend to look for easy target 
 
@@ -76,7 +76,7 @@ and fraud detection(avoid or reduce fraud-ex-ante)
 A fraud detection strategy should involve use of analytical and other procedures to highlight anomalies, 
 and the introduction of reporting mechanisms that provide for communication of suspected fraudulent acts. 
 
-An anti-frayd strategy main components: 
+An anti-fraud strategy main components: 
 -preventuion
 -detection
 -deterrence
@@ -132,9 +132,20 @@ for every false positive you have a cost same for every false negative
 but we cannot really investigate every transaction
 in general we have a limited invastigation capacity
 
+Organizations have a limited investigation capacity, so a shift is taking place toward data-driven or statistically based fraud-detection systems
+a. precision 
+    Increased detection power wrt classic approaches, produces massime volumes of information to uncover frauds that are not apparent to the human eye. 
+    The goal is to make optimal use of the limited investigation capacity and maximize the fraction of fraudulent cases among the inspected ones + the detected amount of frauds 
+b. operational efficiency 
+c. cost efficiency 
+    Automated data-driven approaches are complaint with stringent operational requiremens 
+d. growing amount of interest 
+    This increasing awareness and attention for fraud is likely due to negative social and financial impact.
+    Leads to growing investments and research, both from academia, industry, and government.
+ 
 
-
-FRAUD DETECTION technique sapprocahes are adopting powerful statostically-based methodologies and analyzing massive amounts of data
+### FRAUD-DETECTION TECHNIQUES
+Approcahes are adopting powerful statostically-based methodologies and analyzing massive amounts of data
 fraud remains hard to detect. 
 
 Why it is challenging to detect fraud? 
