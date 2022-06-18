@@ -3,7 +3,7 @@
 Analyticts techniques with focus on the fraud practitioner's perspective. 
 
 
-## Data preprocessing step 
+## Data PREPROCESSING step 
 
 
 
@@ -123,95 +123,111 @@ b. Statistically test whether missing information is related to the target varia
 extreme observations that are very dissimilar to the rest of the population, can be valid or invalid , unvariate(one dimension) or multivariate(multiple dimensions)
  
 ####  Univariate Outlier Detection and Treatment
-  .minimum and maximum values for each of the data elements 
-  .graphical tools: 
-  histograms, 
-  box plot(you rappresent on a scale quartils, first and third, the media and the maximum and minimun, if they are inside the quarttile range- whatever is over is the outliers),
-  z-scores ( reducing the outliers to a threshold you are selecting- impose both  LOWER AND UPPER LIMIT ON A VARIABLE AND ANY VALUES BELOW/ABOVE ARE BROUGH BACK Of these limits )
+Minimum and maximum values for each of the data elements 
+->graphical tools: 
+  1.histogramm 
+  2.box plot(you rappresent on a scale quartils, first and third, the media and the maximum and minimun, if they are inside the quarttile range- whatever is over is the outliers),
+  3.z-scores ( reducing the outliers to a threshold you are selecting- impose both  LOWER AND UPPER LIMIT ON A VARIABLE AND ANY VALUES BELOW/ABOVE ARE BROUGH BACK Of these limits ). Measures how many standard deviations an observation lies away from the mean 
   compute the distribution, represent it on an istogram 
   if inside the range, plot all the data on this line, you compute statistics on your data, then you plot the rane first/last quartile-> how much of your data is inside this area
-  ho wmany stanrdard deviation an observation lies away from the mean-> you check for each single instance how much differs from the media in terms of standard deviation 
+  how many stanrdard deviation an observation lies away from the mean-> you check for each single instance how much differs from the media in terms of standard deviation 
 
 
 ####  Multivariate Outlier Detection and Treatment
-
 (now you are considering multiple features at the same time )
-  fit the features in a multidimensional space -> can be seen as a vector
+  1. fit the features in a multidimensional space -> can be seen as a vector
   -distance between different vectors
   .fitting regression lines and inspecting the observations with large errors
-  .clustering or calculating the Mahalanobis distance
+  2.clustering or calculating the Mahalanobis distance
 
 
 
 
 -variouys schemes exist to deal with outliers 
-  .for invalid observations one could treat the putlier as a missing value
+  .for invalid observations one could treat the outlier as a missing value
   .for valid obs impose both a lower and upper limit on a variable and any values below/above are brought back to these limits -> they are information that we don't want to loose
-   Truncation example 
+#### Truncation example 
 
 
 Not all invalid values are outlying and may go unnoticed if not explicitely looked into
 Construct a set of rules formulated based on expert knowledge 
 find relation you know must be present in your dataset
-constraint that apply to the combination
+constraint that apply to the combination of variable values 
 
 take explicit precautions
+these  kind of inconsistences can by find by experience
 
-theser kind of inconsistences can by find by experience
+ 
+ ● When handling valid outliers in the data set using the treatment techniques, we may impair the ability of descriptive analytics in detecting frauds:
+    Be extremely careful in treating valid outliers when applying unsupervised learning techniques to build a fraud detection model.
 
-## PREPROCESSING 
+● When handling invalid outliers, on the contrary, they can be treated as missing values preferably by including an indicator that the value was missing or even more precisely an invalid outlier.
+ 
+ 
 
-extremly careful to treat these values, you have to ducment by addign a feature that specify because 
-it is missing a valueif you start a preprocessing in the wrong way you cannot be more able to detect the anomaly 
+extremly careful to treat these values, you have to document by addign a feature that specify because 
+it is missing a value, if you start a preprocessing in the wrong way you cannot be more able to detect the anomaly 
 
 
-another problem: represented by this image : INSERT image
+### Standardize data
+
+<img width="516" alt="image" src="https://user-images.githubusercontent.com/61761693/174438418-c18fb07a-cf78-468b-a18f-f23443328b74.png">
+
+another problem: represented by this image 
 compare two value of your dataset -> the distance ( eucledian, manhattan..)
 the problem of this computation is that it is not correct ? 
 The scale are differt!!! doesn't make any sense 
 u have to standardize your features !!
 
-
-### standardize data-> 
 scaling variables to a similar range
--mix/man standardize ( max and min of the current distribution and rescale everything based on that)
--z-score (calculate che z scores, compute min, compute standard deviation, keep the distance )
--decimal scaling (divide by 10 to put all the features in the same scale)
+1. mix/man standardize ( max and min of the current distribution and rescale everything based on that)
+2. z-score (calculate che z scores, compute min, compute standard deviation, keep the distance )
+3. decimal scaling (divide by 10 to put all the features in the same scale)
 
 ### Categorization 
-Additional information about the domain, sometimes you want to add to the dataset some knoldegne that directly derive from of the domain you are analyzing 
-some times you have also continuous variables, and uoi have to study the slot of the c variables and defining when there is a change  in the slot (increase, dcrease, ioncrease) 
-depending on the data you may want to extract different informatio that can be useful -> but you are adding complexity, adding feeatures to te original one that must be treated
+
+Additional information about the domain, sometimes you want to add to the dataset some knowledge that directly derive from of the domain you are analyzing. 
+
+some times you have also continuous variables, andyouuoi have to study the slot of the c variables and defining when there is a change  in the slot (increase, dcrease, ioncrease) 
+depending on the data you may want to extract different information that can be useful -> but you are adding complexity, adding feeatures to te original one that must be treated.
+
 
 ### Variable selection 
+
+Many analytical modeling exercises start with tons of variables, of which typically only a few actually contribute to the prediction of the target variable
 problem automatically solved by random forest alghoritms, they learn the feature important to you, but in another case you don't want to spend complexity and add features to your model 
 this is a problem cause sometimes the dataset has a huge amount of features, and in the end only few of them are really helpful-> 10/15 variables
 
 
-### filters
-are a very handy variable selection mechanisms
+#### FILTERS
+Are a very handy variable selection mechanisms
 allow a quick screening of which variable should be retained
 depending on the type of the variable and the type of target variable  you can select a different statistic test that measure the correlation between the target and the variable
-PEARSON correlation
+
+Pearson correlation
 additional metodology to analyze the correlation
+It measures a linear dependency between two variables and always varies between -1 and +1
 Filters allow reduction in the number of dimension of the data set early in the analysis 
 
+There are other type of filters..
+Filters allow reduction in the number of dimensions of the data set early in the analysis. 
+Is necessary a follow-up input selection step during the modeling phase. 
 Drawback: work univariayely and do not consider correlation between the dimensions individually
+
 
 
 sometimes you cannot use all the feature 
 the motivation may contain personal information 
 feature seletion independent from your decision 
 
-### PCA 
+#### PCA 
 PRINCIPAL COMPONENT ANALYSIS
-group of methods to automatically reduce the dimensionality of your dataset and at the same time finds a set of feature not correlated with each other
+group of methods to automatically reduce the dimensionality of your dataset and at the same time finds a set of feature not correlated with each other.
 you are able to reduce, select feature that you want and the feature are not correlated
 
-reduce dim by forming new value that are a linear composition of the original ones (main component) 
-at maximum the same number of the original ones 
-only a small portion of your variable contains the information you need 
-
+reduce dimension by forming new value that are a linear composition of the original ones (main component) 
+at maximum the same number of the original ones. 
+only a small portion of your variable contains the information you need. 
 the info contained in the original data set can be summerixzed by a limited number of components 
 
 
@@ -219,9 +235,9 @@ find two new features that try to better describe the distribution of the data i
  PC1 will describe the set of data in a way that you can continue the analysis
  they are ortogonal-> not correlation between of them 
 
- ### correlation and stability 
+### Correlation and stability 
  assure that your model will be stable
- when we analyze the stabiltu we refer to correlation between variables
+ when we analyze the stabilty we refer to correlation between variables
 
  it means that when you have to select the feature, the most important one, you have to check that they are not correlated, otherwise 
  the model is not stable -> we achieve bad result 
@@ -237,6 +253,13 @@ the problem is that interpretability is one of the key aspect /parameter to eval
 everything has to be evaluate at the end by an human 
 if you need to have a score easy to investigate/interpret, you have to avoid PCA
 
+ #### Segmentation ?? non so se ci si è soffermato 
+Sometimes the data are segmented before the analytical modeling starts.
+It allow to estimate different analytical models each tailored to a specific segment.
+However, by segmenting, will increase:
+● the number of analytical models to estimate
+● the production, monitoring, and maintenance costs.
+ 
 
 ## DESCRIPTIVE ANALYTICS FOR FRAUD DETECTION
 ### unservised learning techniques -> descriptive anaytocs for fraud detection 
