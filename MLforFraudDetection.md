@@ -1,33 +1,37 @@
-Fraud 3
+# Machine Learning for Fraud Detection 
 
-Machine learning for Fraud Detection 
 Analyticts techniques with focus on the fraud practitioner's perspective. 
 
-pefrorm detection 
+
+## Data preprocessing step 
+
+
 
 Real data is typically dirty, full of inconsistencies, incompleteness and duplication, from messy data you get messy analytical models
 so we have to apply data filtering mechanisms
-first step of data anlyting preprocessing part
+first step of data anlyting preprocessing par
 data preprocessing step -> 80% of your time
 lose a lot of time here, data are pain if you have ever worked with a real dataset
 
 Data-filtering mechanisms must be applied to clean up and reduce the data.
 Even the slightest mistake can make the data totally unusable and the results invalid.
  
--transactional data: structured and detailed information captyring the key characteristics of a customer transaction
+ Different types of data sources: 
+-transactional data: structured and detailed information capturing the key characteristics of a customer transaction
 Summarized over longer time horizons by aggregating it -> they are meaningful when interpreted individually and furthermore their interaction is useful for fraud detectio  and anti money laundering
 
 -types of data elements
-continuous data: defined on an interval ( limited and unlimited) 
-categorial:all the set of data defined on a category  
+  .continuous data: defined on an interval ( limited and unlimited) 
+  .categorial: all the set of data defined on a category  
   -nominal: no meaniningful ordering between a limited set of data
   -ordinal: meaningful ordering
-  -binary: two values 
+  -binary: two values (yes/no)
 
--sampling: take a subset of historical data to build an analytical model 
+### SAMPLING
+take a subset of historical data to build an analytical model 
 we not analyze directly the full data set because the key requirement for a good sample is to be representative fot the future entities 
 -> timing and representativeness are crucial. 
-Sampling timing and bias-> choosing the optimal time window, but it is a trade off between lots of data that gives you a mor robust analytical model and recent data that are more representative
+Sampling timing and bias-> choosing the optimal time window, but it is a trade off between lots of data that gives you a mr robust analytical model and recent data that are more representative
 An average period to get as accurate as possibile a picture of the target population 
 Sampling bias should be avoided even if not straighforward
  
@@ -38,26 +42,29 @@ why not analyze directly the full data set?
   sampling procedure: problem of bias, biased on your decision/selection
   taking a sample is biased by our decision
   a good sample should not be biased 
-  model and select sample that target the avaerage period and behavior, i want an average picture
+  model and select a sample that target the avaerage period and behavior, i want an average picture
   but this is not an easy task 
 
 
 what can I do ? 
--build separate models for homogenous time frames or different frames-> complex and demanding solution
--sampling observations over a period covering a full business cycle and build a single model
+1.build separate models for homogenous time frames or different frames-> complex and demanding solution- multiple models have to be developed, run, maintained and monitored.
+2.sampling observations over a period covering a full business cycle and build a single model
   a. cost of reduced fraud detection power since less tailored to a particular data frames
-  b. less complext and costy to operate
+  b. less complex and costly to operate
 
-Sampling has a direct impact on the fraud detection power 
+Sampling has a direct impact on the fraud detection power.
 
+#### adventage of sampling: you have a smaller dataset, faster in creating your model and being ready to update it 
 
-adventage of sampling: you have a smaller dataset, faster in creating your model and being ready to update it 
-Stratified sampling: a sample is taken according to predefined strata-> 
+Stratified sampling: a sample is taken according to predefined strata
+In a fraud detection context data sets are very skew
+
 a. stratifying according to the target fraud indicator-> sample will contain exactly the same percentages of (non-) fraudulent transactions as in the original data
 b. stratification applied on predictor variables-> resemble the real product transaction distribution 
 
 
-# visual data exploration 
+### VISUAL DATA EXPLORATION
+
 -NO PERIODICITY
 -time good indicatyor
 -distribution good indicator
@@ -68,43 +75,54 @@ fraud transaction can be hidden inside usual transaction
 Visual data exploration is important, gives you an initial insights into the data, you can use plots
 Then inspect some basic statistical measurements -> calculate them separately for each of the target classes to see whether there are any interesting patterns present 
 
-# exploratory statistical analysis
--basic statistical measurements (averages, standard deviations, minimum, maximum, percentiles)
--basic descriptive statistics
+### EXPLORATORY STATISTICAL ANALYSIS
+
+#### Basic statistical measurements 
+(averages, standard deviations, minimum, maximum, percentiles)
+  Calculate these measures separately for each of the target classes to see wheter there are any interesting patterns present 
+  
+#### Basic descriptive statistics
 descriptive statistics provide basic insight for the data, they should be assessed together in support and completion of each other
 a.MEAN AND MEDIAN
-b.VARIATION/STANDARD VARIATION 
-c.PERCENTILE VALUES
-d.MODE
--specific descritive statistics
-. SYMMETRY OR ASYMMETRY OF A DISTRIBUTION -> harder to interpret: limits their pratical use, sometimes it is easier to assess these aspects by inspecting visual plots of the distribution of the involved variables
+b.VARIATION/STANDARD VARIATION: provide insight with respect to how much the data is spread around the mean value 
+c.PERCENTILE VALUES: complementary information wrt the distribution and the median value 
+d.MODE the most frequently occurring value
 
-BENFORDS'S LAW -> visual and numerical data explorastion technique
+
+#### Specific descritive statistics
+
+SYMMETRY OR ASYMMETRY OF A DISTRIBUTION -> harder to interpret: limits their pratical use, sometimes it is easier to assess these aspects by inspecting visual plots of the distribution of the involved variables
+
+### BENFORD'S LAW
+-> visual and numerical data explorastion technique
 it describes the frequency distibution of the first digit in many real-life data strategies
 based on the idea you can have a metric that express the destribution 
-Compare the expected distribution followinf benfords's law with the one provided by the company(with the observed distribution in a data set)
-Strong deviation fromn the expected frequencies may indicate the data to be suspicious and manipulated
+Compare the expected distribution following benfords's law with the one provided by the company(with the observed distribution in a data set)
+Strong deviation from the expected frequencies may indicate the data to be suspicious and manipulated
 It can be used as a screening tool for fraud detection
-It is a partially negative rule, if the law is not satisfied, then it is probable that the involved data were manipulated and further investigation or tsting is required, 
+It is a partially negative rule, if the law is not satisfied, then it is probable that the involved data were manipulated and further investigation or testing is required, 
 conversely, if a data set compies, it can be still fraudulent . 
 A sufficient amount of data related to an invidudal casa need to be gathered. 
 
 
--missing values
+### MISSING VALUES
 Some analytical techniques (e.g., decision trees) can deal directly with missing values. Other techniques need some additional preprocessing.
+
  a. 
  1. Replace the missing values with a known value
  2. Delete observations or variables with lots of missing values: assumes information has no meaningful interpretation 
  3. Keep missing values since they can be meaningful and may have relation with fraud and nees to be considered as a separate category 
+
 b. Statistically test whether missing information is related to the target variable or not.
-1. if yes, then we can adopt the keep strategy and make a special category for it
-2. if not, one can depending on the number of observations available- delete or replace
+ 1. if yes, then we can adopt the keep strategy and make a special category for it
+ 2. if not, one can depending on the number of observations available- delete or replace
 
 
 (fraud 4 - 01/04/22 )
--outliers 
+### OUTLIERS
 extreme observations that are very dissimilar to the rest of the population, can be valid or invalid , unvariate(one dimension) or multivariate(multiple dimensions)
-  UNIVARIATE OUTLIER DETECTION AND TREATMENS
+ 
+####  Univariate Outlier Detection and Treatment
   .minimum and maximum values for each of the data elements 
   .graphical tools: 
   histograms, 
@@ -114,7 +132,10 @@ extreme observations that are very dissimilar to the rest of the population, can
   if inside the range, plot all the data on this line, you compute statistics on your data, then you plot the rane first/last quartile-> how much of your data is inside this area
   ho wmany stanrdard deviation an observation lies away from the mean-> you check for each single instance how much differs from the media in terms of standard deviation 
 
-  MULTIVARIATE OUTLIER DETECTION AND TREATMENS (now you are considering multiple features at the same time )
+
+####  Multivariate Outlier Detection and Treatment
+
+(now you are considering multiple features at the same time )
   fit the features in a multidimensional space -> can be seen as a vector
   -distance between different vectors
   .fitting regression lines and inspecting the observations with large errors
@@ -138,7 +159,7 @@ take explicit precautions
 
 theser kind of inconsistences can by find by experience
 
-# PREPROCESSING 
+## PREPROCESSING 
 
 extremly careful to treat these values, you have to ducment by addign a feature that specify because 
 it is missing a valueif you start a preprocessing in the wrong way you cannot be more able to detect the anomaly 
@@ -151,23 +172,23 @@ The scale are differt!!! doesn't make any sense
 u have to standardize your features !!
 
 
-## standardize data-> 
+### standardize data-> 
 scaling variables to a similar range
 -mix/man standardize ( max and min of the current distribution and rescale everything based on that)
 -z-score (calculate che z scores, compute min, compute standard deviation, keep the distance )
 -decimal scaling (divide by 10 to put all the features in the same scale)
 
-## Categorization 
+### Categorization 
 Additional information about the domain, sometimes you want to add to the dataset some knoldegne that directly derive from of the domain you are analyzing 
 some times you have also continuous variables, and uoi have to study the slot of the c variables and defining when there is a change  in the slot (increase, dcrease, ioncrease) 
 depending on the data you may want to extract different informatio that can be useful -> but you are adding complexity, adding feeatures to te original one that must be treated
 
-## Variable selection 
+### Variable selection 
 problem automatically solved by random forest alghoritms, they learn the feature important to you, but in another case you don't want to spend complexity and add features to your model 
 this is a problem cause sometimes the dataset has a huge amount of features, and in the end only few of them are really helpful-> 10/15 variables
 
 
-## filters
+### filters
 are a very handy variable selection mechanisms
 allow a quick screening of which variable should be retained
 depending on the type of the variable and the type of target variable  you can select a different statistic test that measure the correlation between the target and the variable
@@ -182,7 +203,7 @@ sometimes you cannot use all the feature
 the motivation may contain personal information 
 feature seletion independent from your decision 
 
-## PCA 
+### PCA 
 PRINCIPAL COMPONENT ANALYSIS
 group of methods to automatically reduce the dimensionality of your dataset and at the same time finds a set of feature not correlated with each other
 you are able to reduce, select feature that you want and the feature are not correlated
@@ -198,7 +219,7 @@ find two new features that try to better describe the distribution of the data i
  PC1 will describe the set of data in a way that you can continue the analysis
  they are ortogonal-> not correlation between of them 
 
- ## correlation and stability 
+ ### correlation and stability 
  assure that your model will be stable
  when we analyze the stabiltu we refer to correlation between variables
 
@@ -217,8 +238,8 @@ everything has to be evaluate at the end by an human
 if you need to have a score easy to investigate/interpret, you have to avoid PCA
 
 
-# DESCRIPTIVE ANALYTICS FOR FRAUD DETECTION
-## unservised learning techniques -> descriptive anaytocs for fraud detection 
+## DESCRIPTIVE ANALYTICS FOR FRAUD DETECTION
+### unservised learning techniques -> descriptive anaytocs for fraud detection 
 unsupervides aims at finding anomalos behavior that deviates from the norm of the dataset
 you have to define the norm ( average behiuour of dataset of customer/ or behavior of the average customer)
 
@@ -304,7 +325,7 @@ statistical: this time exploiting statistical techniques
 -
 
 
-# CLUSTERING
+## CLUSTERING
 -> main unsupervised learning technique
 summarize adv and dis of unservised 
 split your data into group such that you want to max similraty intragroup and difference betweek element from different groups
