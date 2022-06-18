@@ -167,7 +167,8 @@ detect the difference between the norm and the fraudulentcases
 supervised learning techniques-> 
 Learn from historical observations to retrieve patterns!! that allow differentiating normal and fraudulent behavior
 
- 
+
+
 limitation of supervised: impossible to see the future, supervised is a train of historical previous cases
 higher number of false negatives 
 They need historical examples to learn from ( labeled data!)
@@ -185,6 +186,12 @@ limitation of supervised learning techiques: is it not enough
 start knownladge from the domain 
 antifraud detection system I have to consider the information I have available
 start with unsupervised learning that extract novel patterns, once you have the investigation of the anaylist you start with data from the past, find pattern and then supervised 
+
+All these systems must be used in a complementary way. 
+
+Besides that, since frauds are not an isoleted fenomena, we want to exploit the domain, for exampole we want to consider social network analysis, 
+trying to buiold graphs on the entity evolving payment to undestand if there are patters. 
+If there is a opatern used or exploited by fraudsters. 
 
 Developing a fraud detection system:
 a. expert based rule engine
@@ -269,6 +276,8 @@ be careful about the costs
 
 In the end, a fraud detection prevention system has the final goal of extraxcting novel knowledge -> red flags of fraud
 The knowledgne that you extract that allows you to understand and interpret fraudolent pattersn. 
+
+
 Fraud 3
 
 Machine learning for Fraud Detection 
