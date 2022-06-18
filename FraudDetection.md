@@ -1,6 +1,9 @@
-## 17/03/2022
+# Fraud Analysis and Detection 
+### 17/03/2022
 Fraud lection 1 
-Fraud detection: 
+
+## Fraud detection 
+
 
 what is a fraud? 
 criminal activity-> criminal or wrongful deception intended to result in financial or personal gain. 
@@ -63,7 +66,7 @@ Plagiarism.
 
 Frauds impacts -> need to invest up to date defense infrastructures. 
 
-### ANTI-FRAUD STRATEGY 
+## ANTI-FRAUD STRATEGY 
 
 These mechanisms aim to reduce the losses since the frauds are prevented and dected and fraudsters tend to look for easy target 
 
@@ -100,7 +103,8 @@ Expert-based relies on human expert input, evaluation and monitoring
 Requires less human involvement, could lead to a more efficient and effective system 
 first expert based -> then automated 
 
-FRAUD MANAGEMENT: all the activities that must take place after a fraudolent activity has been detected and confirmed 
+### FRAUD MANAGEMENT: 
+all the activities that must take place after a fraudolent activity has been detected and confirmed 
 
 -corrective measure: resolve and correct the consequencies. 
 Actions to retrospectively detect and subsequently address similar fraud cases. 
@@ -124,7 +128,7 @@ the more a fraud schema is used , the more easier to detect it is if time has pa
 fraud paterns becomes more apparent, statistically easier to detect
 
 
-DATA DRIVEN FRAUD DETECTION
+### DATA DRIVEN FRAUD DETECTION
 
 like any other security mechanisms, there is a cost of operating 
 if a label is correct and you are reducing the loss, if the label is not correct: you have labeled as fraud a legit transaction
@@ -144,7 +148,7 @@ d. growing amount of interest
     Leads to growing investments and research, both from academia, industry, and government.
  
 
-### FRAUD-DETECTION TECHNIQUES
+## FRAUD-DETECTION TECHNIQUES
 Approcahes are adopting powerful statistically-based methodologies and analyzing massive amounts of data
 fraud remains hard to detect because is a dynamic phenomenon. 
 
@@ -154,8 +158,8 @@ Fraudsters develop advances strategies to cover/blend in their tracks to avoid b
 There is the need for new techniques that are able to detect and address stealthy patterns. 
 
 
-## 18/03/2022
-### Fraud lection 2 
+#### 18/03/2022 Fraud lection 2 
+
 
 unsupervised learning techniques-> 
 They do not require labeled observations, Find behavior that deviates from normal one
@@ -198,7 +202,7 @@ a. expert based rule engine
 b. unsupervised learning systems
 c. syopervised learning systems 
 
-FRAUD MANAGEMENT CYCLE
+## FRAUD MANAGEMENT CYCLE
 
 Fraud detection -> detect it 
 Fraud Investigation: every thing flagged as fraud must be investigate by humane EVERY TIME, in order to check if it is a really fraud or not, it's important, allows to understand the knowledgne to use for automated systems
@@ -223,7 +227,7 @@ With a label that indicates wheter a transaction was fraudulent -> predictive an
 not fitting only in a model. 
 
 
-FRAUD ANALYTICAL PROCESS
+## FRAUD ANALYTICAL PROCESS
 
 iterative, if you encounter a problem you have to go back to another 
 identify data sources: depends in which domain you are going to work 
