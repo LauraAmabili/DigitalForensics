@@ -145,56 +145,79 @@ d. growing amount of interest
  
 
 ### FRAUD-DETECTION TECHNIQUES
-Approcahes are adopting powerful statostically-based methodologies and analyzing massive amounts of data
-fraud remains hard to detect. 
+Approcahes are adopting powerful statistically-based methodologies and analyzing massive amounts of data
+fraud remains hard to detect because is a dynamic phenomenon. 
 
 Why it is challenging to detect fraud? 
 fraudsters adapt theirs approaches to commit fraud without being exposed, probe fraud detection and prevention systsmes to understand their functioning to discover their weaknesses
 Fraudsters develop advances strategies to cover/blend in their tracks to avoid being detected 
-
+There is the need for new techniques that are able to detect and address stealthy patterns. 
 
 
 ## 18/03/2022
 ### Fraud lection 2 
 
-unsupervised leanring techniques-> they do not require labeled observations
-learn from historical observationallow detecting novel fraud patterns 
-detect the differnce between the norm and the fraudulentcases
+unsupervised learning techniques-> 
+They do not require labeled observations, Find behavior that deviates from normal one
 
+learn from historical observation, allow detecting novel fraud patterns 
+detect the difference between the norm and the fraudulentcases
+
+
+supervised learning techniques-> 
+Learn from historical observations to retrieve patterns!! that allow differentiating normal and fraudulent behavior
+
+ 
 limitation of supervised: impossible to see the future, supervised is a train of historical previous cases
 higher number of false negatives 
+They need historical examples to learn from ( labeled data!)
 
 supervised look inside the huge amount of data 
 unserivised: how they behave. 
 extract features from data 
 such kind of systems are not enough , complement the system with supervised.
-learn the diffrence between the known 
 
 chain and combination between the system ->active learning systme: combination of supand unserivised fed with the feedback of an analyst of a group who is continously improving your system
 
-un vs sup .> you want to apply unservised every time you ahve a data set but not labeled
+un vs sup .> you want to apply unservised every time you have a data set but not labeled
 supervaside data with label legitimed and unlegitimed -> predict, detect and estimate some features
-
 limitation of supervised learning techiques: is it not enough 
-
 start knownladge from the domain 
-
 antifraud detection system I have to consider the information I have available
-
-
 start with unsupervised learning that extract novel patterns, once you have the investigation of the anaylist you start with data from the past, find pattern and then supervised 
 
-Fraud managment cycle: 
+Developing a fraud detection system:
+a. expert based rule engine
+b. unsupervised learning systems
+c. syopervised learning systems 
+
+FRAUD MANAGEMENT CYCLE
+
 Fraud detection -> detect it 
-Fraud Investigation: every thing flagged as fraud must be investigate by humane EVERY TIME, in order to check if it is a really fraud or not, it's important, allows to understand the knowledgne to use for automted systems
-Fraud Confirmation: not, ok this is not fraudolent, change the label, retrain your system, unless put and coferm the label and go on 
+Fraud Investigation: every thing flagged as fraud must be investigate by humane EVERY TIME, in order to check if it is a really fraud or not, it's important, allows to understand the knowledgne to use for automated systems
+Fraud Confirmation: not, ok this is not fraudolent, change the label, retrain your system, unless put and conferm the label and go on 
 Fraud Prevention : now we have to prevent these transaction
 
 feedback loop-> you have to automatize all these process and we will automatize this process-> you have to update all your models and systems (the supervised and unsupervised to mathc the new pattern) 
-the preprocessing step is the step that occupies the 80% of yoru time 
+the preprocessing step is the step that occupies the 80% of your time 
+
+Regular update of the model->. 
+regulare update of the model is recommendable given the dynamic nature of fraud. 
+The frequency of retraining or updating the detection model depends on several factors:
+○ The volatility of the fraud behavior.
+○ The detection power of the current model.
+○ The amount of (similar) confirmed cases already available in the database.
+○ The rate at which new cases are being confirmed.
+○ The required effort to retrain the model.
+Reinforcement learning = continuously updates the detection model by learning from the newest observations
+
+Example -> outliers at the data time level, allow detecting abnormal or anomalous behavior and/or characteristics in data set which may occur at the data item level or the data set level. 
+With a label that indicates wheter a transaction was fraudulent -> predictive analystics that classify an instance as being fraudulent or not-> but it is important to generalize
+not fitting only in a model. 
 
 
-Fraud analytics process model 
+FRAUD ANALYTICAL PROCESS
+
 iterative, if you encounter a problem you have to go back to another 
 identify data sources: depends in which domain you are going to work 
 select the data, store in a consistend way 
@@ -204,23 +227,48 @@ analyze -> interpret and evaluate
 
 
 Analyzing output 
+The analytical model is estimated on the preprocessed and transformed data. The actual fraud-detection model is built. 
 what is the minimal requirement of your system? 
 in the end you may want to detect something that was not initial in the dataset 
 
+Possible analysis output
+-trivial fraudulent patterns
+-unknown patterns 
+
+Once the analytical model has been appropriately validated and approved, it can be put into production.
+ 
+
 successful fraud analytics model ->
-accuracy-> detection power and corrrectness of the statistical model 
+--statistical accuracy-> detection power and corrrectness of the statistical model in flagging suspicious cases 
 we need to make sure the model generalized well and is not overfitted to the historical date set 
-interpretability-> since th eoutput must be investigated, you want to have an outout that is understandable by the human 
-operational efficiency->  cases are evaluated in real time
+--interpretability-> since the output must be investigated, you want to have an outout that is understandable by the human- WB/BB interpretability depends on the technique used 
+--operational efficiency->  cases are evaluated in real time. Operational efficiency is crucia
 fraud managment -> RISK ( statistical and economical evaluation of the exposure to damage because of the presente of vulnerabilities and threats) 
 security vs cost balance
+Direct costs
+● Management
+● Operational
+● Equipment
+Indirect costs (more relevant)
+● Less usability
+● Slower performance
+● Less privacy (due to security controls) 
+● Reduced productivity (users are slower)
+--economical cost-> developing and implementing a fraud detection model involves a significant cost to an organization -> cost-benefit analysis
+--regulatory compliance: there are soe data that you cannot analyze due to the legislations and normatives. You lose the correspondence between user-transaction. 
 
 
-there are soe data that you cannot analyze due to the legislations and normatives. 
+Challenges of developing fraud-detection models 
+The challenges are not only for the ML tasks, but also in the domain you are analyzing. 
 
-
+-Dynamic nature of fraud, frauds are dynamic in nature, they continue to evolve
+-Accuracy you will have to achieve a high detection rate, but it is a direct cost of the bank 
 be careful about the costs 
-SKEWNESS of the dat a
+-SKEWNESS of the data: frauds are uncommon, you have to find techniques that balance your dataset 
+-The system must be scalable, able to analyze huge amount of data
+
+In the end, a fraud detection prevention system has the final goal of extraxcting novel knowledge -> red flags of fraud
+The knowledgne that you extract that allows you to understand and interpret fraudolent pattersn. 
 Fraud 3
 
 Machine learning for Fraud Detection 
