@@ -3,16 +3,16 @@ Fraud lection 1
 Fraud detection: 
 
 what is a fraud? 
-criminal activity-> criminal deception intended to resuper in financial or personal gain. 
-main driver of the froeds. If we use this definition to understand 
+criminal activity-> criminal or wrongful deception intended to result in financial or personal gain. 
+main driver of the frods. If we use this definition to understand 
 
 fraud is an uncommon, well-considered, imperceptibly concealed, time-evolving and often carefully organized crime. 
-There 5 are the main challenges you have to cope with. 
+These 5 are the main challenges you have to cope with. 
 It is not an isoleted phenomena, it is a social phenomenal, it comes to expenses of the victim. 
 Who is the victim? organization, person, society. 
 
-UNCOMMON: only a minority of cases concerns fraud, of which only a limited number owill be known to concern fraud. 
-Only a minority of the cases in your datased concern fraud, only a small percentage of your datased is related to the class fraud. 
+UNCOMMON: only a minority of cases concerns fraud, of which only a limited number will be known to concern fraud. 
+Only a minority of the cases in your datased concern fraud, only a small percentage of your dataset is related to the class fraud. 
 but, besides that, of this part, only a limited number will be known to concern fraud. Some of them may be not detected, but they are in your dataset. 
 You will have to exploit as much as possible these few. 
 -detect fraud is difficult: fraudulent cases are covered by the legitimate ones.
@@ -25,7 +25,7 @@ mimic attacks, the attacker tries to mimic the behave of the user.
 frauds that evade from detection systems. 
 
 TIME-EVOLVING: fraudsters adapt and refine their methods to remain undetected. Fraud detection systems improve and learn by example. 
-The adversary is always one step further. Fraudsters techniques evolve in time aklong with or better ahed of fraud detection mechanisms. 
+The adversary is always one step further. Fraudsters techniques evolve in time along with or better ahead of fraud detection mechanisms. 
 
 CAREFULLY ORGANIZED CRIME: every single fraud cases is not an isoleted event. 
 Fraudsters: do not operate independently, involve complex and organized structures. To detect fraud the context should be taken into account. 
@@ -34,7 +34,7 @@ Fraudsters: do not operate independently, involve complex and organized structur
 why do people commit fraud: 
 Basic driver: potential monetary gain or benefit. 
 -MID or GRiD: difficult financial situation, financial gain.
-Fraud triangle: basic conceptual model that presents the factors that explain the drivers for an individual to ommit fraud. 
+Fraud triangle: basic conceptual model that presents the factors that explain the drivers for an individual to commit fraud. 
 -Rationalisation, opportunity, motivation -> we have to reduce the opportunity driver. 
 
 Fraud categories: 
@@ -43,14 +43,17 @@ Banking and credit card: one of the most done, economic motivation. Unauthorized
 2. obtain data of the bank account of an user and perform fraud
 
 Insurance fraud: 
-1.sell fake insurance
-2. exploiit some condition to earn money
+1. sell fake insurance
+2. exploit some condition to earn money
+
+Corruption: 
+The misuse of entrusted power for private gain 
 
 Counterfeit: imitate intended to be passed off fraudulently or deceprively as genuine-> concerns valuable objects. 
 
 Product warranty fraud: fraudulently claiming compensation or remuneration based on a product warranty. 
 
-Healthcare fraud
+Healthcare fraud: filing of dishonest healthcare claims to make profit.
 Telecommunications fraud: phishing, scamming, cloning, superimposition fraud. -> super easy to exploit, no phisical attack. Just the voice. 
 Money laundering: criminal activity and make them appeal as legal. 
 Click fraud: legal links on a website in order to add the number of clicks. 
@@ -62,34 +65,76 @@ Frauds impacts -> need to invest up to date defense infrastructures.
 
 ### Anti-fraud strategy
 
-Fraud prevention and fraud detection 
--Expert-based approach: 1. rule-based engine disadvantages -> expensive to build, require manual input, difficul to maintain and manage 
-fraudsters can lerarn the rules and circumvent them, new frauyd patterns are not automatically updated
--automated fraud detection systems: how ever expert based remain important top build an effective 
+These mechanisms aim to reduce the losses since the frauds are prevented and dected and fraudsters tend to look for easy target 
+
+Fraud prevention ( recognize or discover fraudulent activities-ex-post) 
+Fraudsters adapt and change their behavior
+The most effective ways to deal with the problem of fraud is to adopt methods that will decrease motive, restrict opportunity
+and limit the ability for potential fraudsters to rationalize their actions.
+
+and fraud detection(avoid or reduce fraud-ex-ante)
+A fraud detection strategy should involve use of analytical and other procedures to highlight anomalies, 
+and the introduction of reporting mechanisms that provide for communication of suspected fraudulent acts. 
+
+An anti-frayd strategy main components: 
+-preventuion
+-detection
+-deterrence
+-response
+
+-Expert-based approach: approach built on the domain knowledgne of the fraud analyst. 
+Involves a manual investigation of a suspicious case. 
+It may find a mechanisms- requires a detailed investigation to understand and address the new mechanism. 
+The comprehension of the fraud mechanisms allows extending the fraud detection and prevention mechanisms. 
+
+-->rule-based engine
+Rules describing previously detected fraud patterns that are applied to future transactions and trigger an alert when a fraud may be committed. 
+You have to keep the rule base lean and effective. Rule based engine must continuously monitored, improved and updated to remain effective. 
+disadvantages -> expensive to build, require manual input, difficul to maintain and manage 
+fraudsters can learn the rules and circumvent them, new fraud patterns are not automatically updated
+
+
+Expert-based relies on human expert input, evaluation and monitoring
+
+-Automated fraud detection systems: however expert based remain important to build an effective system
+Requires less human involvement, could lead to a more efficient and effective system 
 first expert based -> then automated 
 
-Fraud managment: all the activities that must take place after a fraudolent activity has been detected and confirmed 
+FRAUD MANAGEMENT: all the activities that must take place after a fraudolent activity has been detected and confirmed 
 
--corrective measure: resolve and correct the consequencies 
--preventive: to prevent 
+-corrective measure: resolve and correct the consequencies. 
+Actions to retrospectively detect and subsequently address similar fraud cases. 
+Retrospective screening
+  -asses the impact of the newly dected type of fraud
+  -resolve, by means of corrective measures, fraud cases. 
+The sooner corrective measures are taken and fraud is detected, the more effective such measures are and the more losses can be avoided. 
+-preventive: to prevent
+Actions that aim at preventing future frauds, making the organization more robust and less vulnerable
+Typical process: 
+1. investigate the fraud case to understand the underlying mechanisms. 
+2. Extend the available expert knowledge with the discovered mechanisms. 
+3. Adjust the detection and prevention system. 
 
 
-step futher-> automatated base -> frauds becomes earies to detect the more time has passed. 
+step futher-> automatated base -> frauds becomes easier to detect the more time has passed. 
 the more time passed, the more a fraud mechanisms is used, if a fraud is done and it is not detected, it will be done again. 
-the more data you have the mor eyou can build systems 
+the more data you have the more you can build systems 
 
 the more a fraud schema is used , the more easier to detect it is if time has passed
 fraud paterns becomes more apparent, statistically easier to detect
 
 
-DATA DRIVEM FRAUD DETECTION
-like any other security mechanisms, there is a cost ofr operating 
-if a label is correct and you r are reducing the loss, if the label is cnot correct: you have labeled as fraud a legit transaction
-for every false positive you have a costsame for every false negative
-but we cannot really investigate every transaction
-in general we have a limited invastigation capacit
+DATA DRIVEN FRAUD DETECTION
 
-FRAUD DETECTION techniquesapprocahes are adopting powerful statostically-based methodologies and analyzing massive amounts of data
+like any other security mechanisms, there is a cost of operating 
+if a label is correct and you are reducing the loss, if the label is not correct: you have labeled as fraud a legit transaction
+for every false positive you have a cost same for every false negative
+but we cannot really investigate every transaction
+in general we have a limited invastigation capacity
+
+
+
+FRAUD DETECTION technique sapprocahes are adopting powerful statostically-based methodologies and analyzing massive amounts of data
 fraud remains hard to detect. 
 
 Why it is challenging to detect fraud? 
