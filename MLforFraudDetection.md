@@ -188,7 +188,7 @@ scaling variables to a similar range
 
 Additional information about the domain, sometimes you want to add to the dataset some knowledge that directly derive from of the domain you are analyzing. 
 
-some times you have also continuous variables, andyouuoi have to study the slot of the c variables and defining when there is a change  in the slot (increase, dcrease, ioncrease) 
+some times you have also continuous variables, and you have to study the slot of the c variables and defining when there is a change  in the slot (increase, dcrease, ioncrease) 
 depending on the data you may want to extract different information that can be useful -> but you are adding complexity, adding feeatures to te original one that must be treated.
 
 
@@ -237,11 +237,10 @@ find two new features that try to better describe the distribution of the data i
 
 ### Correlation and stability 
  assure that your model will be stable
- when we analyze the stabilty we refer to correlation between variables
+ when we analyze the stabilty we refer **to correlation between variables**
 
  it means that when you have to select the feature, the most important one, you have to check that they are not correlated, otherwise 
  the model is not stable -> we achieve bad result 
-
 
 if you apply PCA-> your model will be stable
 
@@ -262,130 +261,131 @@ However, by segmenting, will increase:
  
 
 ## DESCRIPTIVE ANALYTICS FOR FRAUD DETECTION
-### unservised learning techniques -> descriptive anaytocs for fraud detection 
-unsupervides aims at finding anomalos behavior that deviates from the norm of the dataset
+
+### unsepervised learning techniques -> descriptive analytics for fraud detection 
+unsupervised aims at finding anomalous behavior that deviates from the norm of the dataset
 you have to define the norm ( average behiuour of dataset of customer/ or behavior of the average customer)
 
-unsupervised , you can identify from know cyber attack 
+unsupervised , you can identify from new cyber attack 
 
 you want to identiy an outlier detection
-
 techiques relevant when you have NO labels!
 fraudsters is dynamically adapting, organization is at the beginning 
-
-
-
-define your norm, define the AVERAGE behavior of your dataset 
 find a way to model an average behavior
 
-the norml depends on the domain you are analazing 
-when you define a norm you are defining the boundering of whay is normal and what is not 
+**Define your norm, define the AVERAGE behavior of your dataset**
 
+-the norm depends on the domain you are analyzing 
+-when you define a norm you are defining the boundering of why is normal and what is not 
+-the norm may change over time 
+-anomalies do not necessarily represent frauds, since it is unsupervised, what ever you find is knowledgne that canbe related or Not
 
-since it is unsupervised, what ever you find is knowledgne that canbe related or Not
-
-
+GRAPHICAL outlier detection procedures
 procedure similar for outliers in preprocessing, you can canalyze them in one or multi dimension 
-disadvantges: less formal and limited to a few dimensions, require active involvement of the end user, for a sarge dimensional data set, is cumbersome
+1. One dimension outliers-> histogram or box plot 
+2. Two/three dimensional outliers -> scatter plot 
 
-
+disadvantges: less formal and limited to a few dimensions, require active involvement of the end user, for a large dimensional data set, is cumbersome
 
 knowledge to verify what you have found
 
-1. statistical outlier detection 
--> z-score
--fit a distribution 
-these two are the same saw before
--> break point analysis
 
+## STATISTICAL OUTLIER DETECTION
+
+### Z-score
+If the absolute value of the z-score is bigger than 3 can be considered as outliers 
+### Fit a distribution, or mixture of distributions
+Outliers: observations with small values for the probability density function 
+### Break Point Analysis 
 intra-account fraud detection method -> break point indicates a sudden change in the behavior
 a. define a fixed time window
 b. split into an old and new
 c. you compare them 
+
 detect if there is a change in the behiavour and study the difference, if it is higher than a threshold you set, you start investigate
 (see slide) 
 training part and testing part 
 studying the difference -> find something that needs to be investigated
-->peer-group
+### peer-group
 INTER-account techiques
-group of account that behaves similarly, elements in your dataset that are close together,  when the behaviour deviates from the peer created, anomaly 
-a. peer group identification
-  -distance 
-  -ask experts
-  -select number of peers is a problem (tto many all the dataset, depends on the locality of the model you want to build)
-b. anomaly valuation
--> association rule analysis 
+group of account that behaves similarly to the target account, elements in your dataset that are close together,  when the behaviour deviates from the peer created, anomaly 
+#### a. peer group identification 
+#### b. anomaly valuation
+Steps: 
+1. The peer group of a particular account is identified 
+  a. from prior business knowledge 
+  b. In a statistical way
+2. Number of peers ( if too small, sensitive to noise, if too large, insensitive to important irregularities)
+3. The behavior of the target account is contrasted with its peers
+  a. statistical test 
+  b. distance metric 
+
+
+### association rule analysis 
 detect frequently occurring relationship between items
 association  between two different items in the dataset
- you define association rule X sub set of items and Y subset of items-> statoistical measure of the strengh 
+Key input: transactions database D consisting of a transaction identifier and a set of items I. 
+ you define association rule X sub set of items and Y subset of items-> statistical measure of the strengh of the association
+
 
 
  INSURANCE FRAUD EXAMPLE 
  Goal: find frequentelly occurring relationships/associations rules between the various parties involved. 
 compute a set of statistics
 1. identify frequenty item strategies
-suppert(X) -> percentage of total transactions in the database that containts the item set 
+The frequency of an item set is measured by means of its support, which is the percentage of total transactions in the database that contains the item set 
+support(X) -> percentage of total transactions in the database that containts the item set 
 2. derive association rules -confidence- strong enough to be considered
-confidence(X->Y)
+confidence(X->Y): measures the strength of the association and is defined as the conditional probability of the rule consequent, given the rule antecedent. 
 
 
+> FRAUD DETECTION
 
-
-
-
-
-FRAUD DETECTION
-
-in the previuour lecture we explodred the unsupervised, the main difference with rw supervised 
-you don't have any label related to the custom value you want to predict/classify
-we have to extract the norm
-main challenge of unsupervised-> anomaly DETECTIONyou want to detect something that is outling with the norm itself
-allows you to extract knowledge
-started from graphic techniques-> something that outlies from the nrm, group of points
-statistical: this time exploiting statistical techniques
--break point: intraaccount , you decide testing window and you test if the new distribution is similar to the preboous one
--peer-group, seasonality, data that change during time 
--
+> in the previuour lecture we explodred the unsupervised, the main difference with rw supervised 
+> you don't have any label related to the custom value you want to predict/classify
+> we have to extract the norm
+> main challenge of unsupervised-> anomaly DETECTIONyou want to detect something that is outling with > the norm itself
+> allows you to extract knowledge
+> started from graphic techniques-> something that outlies from the nrm, group of points
+> statistical: this time exploiting statistical techniques
+> break point: intraaccount , you decide testing window and you test if the new distribution is > similar to the preboous one
+> peer-group, seasonality, data that change during time
 
 
 ## CLUSTERING
+
 -> main unsupervised learning technique
-summarize adv and dis of unservised 
-split your data into group such that you want to max similraty intragroup and difference betweek element from different groups
+summarize advantages and disadvantages of unsupervised
+split your data into group such that you want to max similarity intragroup and difference betweek element from different groups
 
-
-process that requiresa a good amount of data
+process that requires a good amount of data
 group data in different set 
-if you have a lot of fetures apply feature selection 
+**if you have a lot of feature apply feature selection**
+
 norm: big cluster of data 
 anomalies: small cluster that is away from the normal 
 this is what you want them to analyze to understand it it is frudolent or Not
 
 this single ^^ anticipates one of the main challenge of clustering, a super good tipycal result is in this example
-the interesting fact about clustering it works -> you are gonna pobtain cluster in any change
+the interesting fact about clustering it works -> you are gonna obtain cluster in any change
 the change is to find a way to understand if the cluster is meaningful or not, if it is relevant
 
+final result of clustering technique-> something that was not relevant
 
-final result of clustering technique-> something that was not relevant 
-
-
-Clustering techniques can be devided in Hierarchical and nonhierarchical
-Hierarchical you have: agglomerative/divisive 
-NON Hierarchical: 
-
-
-core element of clustering techiques: distance matric!!
+core element of clustering techiques: ***distance matric!!***
 
 Aim of clustering: group observation based on similarity 
-distance metric is needed to wuantify similarity !
-in order to cluster element you have to compute the similarity between two elemnt 
+distance metric is needed to quantify similarity !
+
+in order to cluster element you have to compute the similarity between two element
+
 -euclidea,/minkowski(depending on the parameter you may obtain a manhattan or euclidean) -> be careful you want to standardize
 
+**Continuous Variables** ok -> euclidian, pearson correlation or cosine measure 
 
-for continuois variables ok -> euclidian, pearson correlation or cosine measure 
-categorical variables -> binary variables, zero or one depending on if this particular features is present or not in your data
+**Categorical variables** -> binary variables, zero or one depending on if this particular features is present or not in your data
   a. Simple matching coefficent -> SMC computes number of identical matches between values of a variable(take a distance and another distance and you compute how many times are different)
-  b. jaccard index -> similarity when they are both set to one 
+  b. jaccard index -> similarity when they are both set to one
   -categorical with more than two values
   first option: 
   -> transform them in dummy 0/1 values 
@@ -394,17 +394,21 @@ categorical variables -> binary variables, zero or one depending on if this part
   -> apply simple matching coefficent 
   -> count the number of identical matches 
 
-
 You have to do a trial and error approach
 Continuous and categorical variables mix -> due opzioni 
 
+<img width="638" alt="image" src="https://user-images.githubusercontent.com/61761693/174471077-96f4170b-d7f5-4f9b-a732-6908ea1faaaa.png">
+
 
 ## Clustering Hierarchical 
-Divisive and agglomerative depending on how you perform the clustering
-Divisive: you start by considering all the elemnts inside your dataset as beyond one single còluster  and then you start analyzing the similarity between the elements to split them until you reach one element
-Agglomerative: you assign one single cluster to each element, compute similarity and you start group them 
 
-Distance between clusters -< different methods (you can call a library in python)
+Divisive and agglomerative depending on how you perform the clustering
+#### Divisive
+you start by considering all the elemnts inside your dataset as beyond one single cluster  and then you start analyzing the similarity between the elements to split them until you reach one element
+#### Agglomerative
+you assign one single cluster to each element, compute similarity and you start group them 
+
+Distance between clusters -> different methods (you can call a library in python)
 
 single: most closest point 
 complete: defined by the distance between the two most different
@@ -415,27 +419,29 @@ Final result will be something in between the two step, find different result an
 
 main problem of distance: not efficient, you have to visit the entire dataset 
 
-NUMBER OF CLUSTERS 
+NUMBER OF CLUSTERS-> decide on the optimal number of clusters
 -dendogram: keep track of all the possible merge, and put in a diagram the distances 
--screen plot: 
+-screen plot: plot of the distance at which clusters are merged, the elbow point that indicates the optimal clustering
 
-if have comunque to decide if it is correct or not 
+you have comunque to decide if it is correct or not 
 using a different technique would result in a different result , why? 
 _____ non ho capito so solo che succede se tipo uso complete invece di average
 
 
-hierarchical -> advantage: number of cluster does not need tobe specified, allows to cluster data without knowing a priori the number of cluster to select 
+Advantage: number of cluster does not need to be specified, allows to cluster data without knowing a priori the number of cluster to select 
 Disadvantage: they do not scale at all, the higher the amount of data, the higher the computation 
 the interpretation of the cluster is often subjective -> you have to have an expert that evaluates your result
 
 
 ## Clustering Non Hierarchical 
-basic techniques that can be used, the nmber of features are not so used and i want something that can be interpret by an analyst 
-K-MEANS: 
-aopply each observations to the closest centroid 
-step 2: recompute centroids 
-reassign observation 
 
+basic techniques that can be used, the number of features are not so used and i want something that can be interpret by an analyst 
+#### K-MEANS: 
+
+1. Select k observations as initial cluster centroids(seeds)
+2. Assign each observation to the cluster that has the closest centroid(eg Euclidean distance)-> apply each observations to the closest centroid 
+3. When all observations have been assigned, recalculate the positions of the k centroids(mean)-> recompute centroids 
+4. Repeat until the cluster centroids no longer change or a fixed number of iterations is reached
 
 continue until k into distributoion or after a limit number of iterations
 
@@ -443,32 +449,39 @@ disadvantages: you have to know the number of clusters ! (or you have to try all
 the final result depend on where you put the position of centroid (on where you put the centroid)
 
 
-SOM (self organizing maps) 
+#### SOM (self organizing maps) 
 NN that has only two layer ( input and output layer) 
 Allows to visualize and cluster high dimensional data on a low-dimensional grid of neurons 
-each inpout is connected to the all possibile outputh with a set of weights 
+each input is connected to the all possibile outputh with a set of weights 
+
+When a training vector x is presented, the weight vector of each neuron c is compared with x, the neuron that is most similar to x in Euclidian sense is the BMU
 BMU most similar vector of the input you have provided on the basis 
 we select the BMU 
 once we have selected it we are going to update all the weights to match the best matchin until
 try to map all the neibg to the distribution of your original dataset 
-
 
 iterative procedure
 1.compute the BMU that is the most similar vector to the input that you have porovided on the basis of the euclidian distance 
 2. update all the wights in order to match the BMU -> stretch to fit as much as possible the original distribution 
 
 you will have a stable solution at the end 
-a lighet part  / darker part will rappresent clusters 
+a light part  / darker part will rappresent clusters 
+
+Soms are a very handy tool for clustering high-dimensional data sets because of the visualization facilities. Since there is no objective function to minimize, it is harder to compare various SOM solutions against each other. Experimental evaluation and expert interpretation is needed to decide on the optimal size of the SOM. 
+Unlike k-means clustering, a SOM does not force the number of clusters to be equal to the number of output neurons. 
 
 
-## semi-supervised clustering 
+## SEMI-SUPERVISED CLUSTERING 
 
-put constraints on how you are going to cluster elemtns inside your data 
+In many domains, the expert have prior knowledgne about existing fraud patterns and anomalous behavior. We can incorporate backgroun knowledge to guide the clustering. 
+Bias the clustering with expert knowledge suh that che clusters can be found quicker and with the desider properties. 
+
+put constraints on how you are going to cluster elements inside your data 
 put labels or minimun distance between particular pairs of elements-> procedure easier and faster
-you are guding the cluster procedure
-this can be done when you have information provided bu experts
+you are guideing the cluster procedure
+this can be done when you have information provided by experts
 
-you are going to label all your istrances with already a preformed cluster that you know from a precedent knowledge
+you are going to label all your istances with already a preformed cluster that you know from a precedent knowledge
 
 
 One-Class SVM 
