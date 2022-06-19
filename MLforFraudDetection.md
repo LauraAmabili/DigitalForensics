@@ -483,11 +483,17 @@ this can be done when you have information provided by experts
 
 you are going to label all your istances with already a preformed cluster that you know from a precedent knowledge
 
+We can have different type of constraints
+-Observation-level constraints
+If the fraud behavior of only a few observations is known, they can then be forced into the same cluster.
+-Cluster-level constraints 
+-Other 
 
-One-Class SVM 
-
-try not to cluster your data in different group, theu try to distinguish what is the norm to what is a outlier 
+**One-Class SVM** 
+Maximize the distance between a hyperplane and the origin 
+try not to cluster your data in different group, then try to distinguish what is the norm to what is a outlier 
 they try to do this by trying to rappresent your data in a two dimensional space and find the best hyperplane 
+
 
 
 PAINFUL PART NOW !! yay 
