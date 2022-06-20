@@ -635,12 +635,12 @@ depending on the sign we can undestand if it produces a decrease or an increase-
 
 In general we almways have to find a trade-off good amount of feature and what to keep 
 
-# DECISION TREE 
+## DECISION TREE 
 
 more powerful than linear-logistic regression 
-algorithms based on a tree-like structure- recursive partioning -> fit the distribution of yoru target bariabile in a structure in each node rappresent a test condition of the valueof the specific feature
+algorithms based on a tree-like structure- recursive partioning -> fit the distribution of your target variabile in a structure and each node rappresent a test condition of the value of the specific feature
 you start from the top node and then you reach the final nodes = leaf nodes
-for each node we establish a condition, and depending on thevalue you split to one brunch or another, until you reach the leaf node where you take the decision 
+for each node we establish a condition, and depending on the value you split to one brunch or another, until you reach the leaf node where you take the decision 
 
 you use this to undestand if a new sample  is fraudolent or not based on the value of the single feature you are going to encounter by travelling 
 
@@ -650,23 +650,25 @@ algoritms: depending on how you perform the stepwise
 -assignment 
 
 
-SPLITTING DECISION 
-me have to define a metric - impurity or caos 
-minimal: all elemnts are good or Not
+### Splitting decision 
+
+we have to define a metric - **impurity or caos**
+minimal: all elements are good or Not
 maximum: half of one type , half of the other type 
-you have to undestand if the split is giving you an increase or decrease of impurity -> we want to minimize the impurity 
+you have to understand if the split is giving you an increase or decrease of impurity -> we want to minimize the impurity 
 find a way to measure such impurity: ENTROPY or GINI index (they are 0 or 1- maximum when are half/half 0 all related to the 0 or 1 class)
 they are totally equivalent
-you ahve to decide how to split and when by choosing the split in terms of decrease in impurity -> gain 
+you have to decide how to split and when by choosing the split in terms of decrease in impurity -> gain 
 higher gain is preferred !!!! GAIN = DECREASE IN IMPURITY 
 
 you perform this by following a greedy and recursive strategy: take the feature, compute the gain, take the feature, compute the gain, select the one with the best gain 
 since you have tree structure you can parallize it 
 
-STOPPING DECISION 
+### Stopping decision
+
 if the tree continuous to split -> overfitting
 stop before your model start fit your own distribution 
-to avoid devide training and validation 
+to avoid:  devide training and validation 
 
 properties: 
 you can rappresent every decision tree as a rule set -> set of rules that every the same rules of a decision tree
@@ -677,7 +679,7 @@ a decision rule automatically extract features from your dataset
 we can now interpret the result of a cluster solution using them as an input of the decision tree-> they are full interpretable 
 
 regression: 
-decision tree can be used also to predic the next coninous variable ( target) 
+decision tree can be used also to predic the next continuous variable ( target) 
 the final output is not a label but a cont variable ( x example a probability )
 we have the same functions and the same challenges 
 changes: the metrics 
@@ -689,7 +691,7 @@ they tend to overfit, this decision tre can bee highly dependent on the sample u
 
 
 
-# NEURAL NETWORK 
+## NEURAL NETWORK 
 generalization of the statistical models  
 basic component of a neural network is a logistic regression
 logistic and linear regression is a neural network with one neuron 
