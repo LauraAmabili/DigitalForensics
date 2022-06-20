@@ -692,6 +692,7 @@ they tend to overfit, this decision tre can bee highly dependent on the sample u
 
 
 ## NEURAL NETWORK 
+
 generalization of the statistical models  
 basic component of a neural network is a logistic regression
 logistic and linear regression is a neural network with one neuron 
@@ -717,14 +718,13 @@ you never use network with more than 1 or 2 hidden layers -> capable of approxim
 
 NN are able to model complex pattern-> generalization of logistic regression 
 Neuron that implement a logistic or linear regression depending on the function 
-the function is called act func 
-Basic core unit of a NN as a neuron that receive as input thevalues of the feature of the dataset ( preprocessed) and then 
-you are gonna wakes them with the same paramenter of the logistic function 
+the function is called activation function
+Basic core unit of a NN as a neuron that receive as input the values of the feature of the dataset ( preprocessed) and then you are gonna wakes them with the same paramenter of the logistic function 
 
 weights of the node 
 For each single node of a NN you are combining them with different weights 
 
-We generalize such concept and we alyze what is a MLP, just a combination of neurons organized in layer. 
+We generalize such concept and we analyze what is a MLP, just a combination of neurons organized in layer. 
 you have an inpout layer, hidden ( feature extractionb layer), and putput layer 
 you are creating feature that are combination of the weights 
 
@@ -739,14 +739,14 @@ we have to preprocess the data in the correct form, NN appreciates zeros and one
 We have to find a way to find the value of the weights, in the NN the job of finding optimal parameters is complex. 
 We have to follow an iterative function that minimizes 
 
-Continout -> MSE
+Continout -> MSE (mean squared error)
 Binary -> Maximum likelihood
 
-start from random weights and then adjsust them 
+start from random weights and then adjsust them using an optimization algorithm 
 
-problem? the cost function it is usually a non convex function, menas that may have not a global minimum, if you start from the wrong weights you can fall to the local mimumum?? e quindi??
+problem? the cost function it is usually a non convex function, means that may have not a global minimum, if you start from the wrong weights you can fall to the local mimumum?? e quindi??
 
-preliminary training -> start from different set of weights, start the optimization and continui only with the one that gives best intermediate solution 
+preliminary training -> start from different set of weights, start the optimization and continue only with the one that gives best intermediate solution 
 
 The optimization procedure then continues until the error function shows no further progress/the weights stop changing substantially(probably reached a minimum)/after a fixed number of optimization steps (Epochs)
 
@@ -763,7 +763,8 @@ Neural networks can model very complex patterns and decision boundaries in the d
 1° Option
 ● Training set -> estimate the weights.
 ● Validation set -> independent data set used to decide when
-to stop training and avoid this overfitting. 2° Option
+to stop training and avoid this overfitting. 
+2° Option
 Weight regularization: keep weights small in absolute sense to avoid fitting the noise in the data.
 ● Add a weight size term to the objective function of the neural network.
  
@@ -771,26 +772,28 @@ Weight regularization: keep weights small in absolute sense to avoid fitting the
 you relate input/output in a mathematical copmplez way -> black box
 you have to find a way of opening it and interpret the results 
 
-
 this three can be applied to any ML black box
-1. variable selection 
-
+#### 1. variable selection 
 undestand the variable that are activately contributing to the output 
 in  linear and logistic you have p-value, in NN no p value 
 possible solution: is a GRAPHICAL one ( analyzed by humans)-> HINTON DIAGRAMS -> size and color of the square to understand the diagram 
 (Performance-driven) Selection: Backward Variable Selection
 It does not offer a clear insight into its internal workings. The relationship between the inputs and the output remains nonlinear and complex.
 
-2. rule extraction 
+#### 2. rule extraction 
 Extract if-then classification rules, mimicking the behavior of the neural network:
 ● Decompositional technique: decompose the network’s internal workings by inspecting weights and/or activation values.
 ● Pedagogical technique: consider the neural network as a black box and use the neural network predictions as input to a white-box analytical technique such as decision trees
-○ Can essentially be used with any underlying algorithm
+Can essentially be used with any underlying algorithm
  
+ The rule sets must be evaluated in terms of Accuracy, conciseness and fidelity that measures to what extent the extracted rule set succeeds in mimicking the neural network. 
 
 
-3. two stage models
-
+### 3. two stage models
+1. Estimate an easy-to-understand model first (e.g., linear regression, logistic regression).
+a. This will give us the interpretability part.
+2. Use a neural network to predict the errors made by the simple model using the same set of predictors.
+a. performance benefit of using a nonlinear model.
 
 # Support vector machine 
 tries to separate the two different classes 
