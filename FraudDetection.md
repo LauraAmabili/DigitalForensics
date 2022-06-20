@@ -250,11 +250,15 @@ Once the analytical model has been appropriately validated and approved, it can 
  
 
 successful fraud analytics model ->
---statistical accuracy-> detection power and corrrectness of the statistical model in flagging suspicious cases 
+### statistical accuracy-> 
+detection power and corrrectness of the statistical model in flagging suspicious cases 
 we need to make sure the model generalized well and is not overfitted to the historical date set 
---interpretability-> since the output must be investigated, you want to have an outout that is understandable by the human- WB/BB interpretability depends on the technique used 
---operational efficiency->  cases are evaluated in real time. Operational efficiency is crucia
-fraud managment -> RISK ( statistical and economical evaluation of the exposure to damage because of the presente of vulnerabilities and threats) 
+### interpretability-> 
+since the output must be investigated, you want to have an outout that is understandable by the human- WB/BB interpretability depends on the technique used 
+### operational efficiency->  cases are evaluated in real time. Operational efficiency is crucia
+fraud managment -> RISK 
+( statistical and economical evaluation of the exposure to damage because of the presente of vulnerabilities and threats) 
+
 security vs cost balance
 Direct costs
 ● Management
@@ -265,8 +269,10 @@ Indirect costs (more relevant)
 ● Slower performance
 ● Less privacy (due to security controls) 
 ● Reduced productivity (users are slower)
---economical cost-> developing and implementing a fraud detection model involves a significant cost to an organization -> cost-benefit analysis
---regulatory compliance: there are soe data that you cannot analyze due to the legislations and normatives. You lose the correspondence between user-transaction. 
+### economical cost-> 
+developing and implementing a fraud detection model involves a significant cost to an organization -> cost-benefit analysis
+### regulatory compliance: 
+there are soe data that you cannot analyze due to the legislations and normatives. You lose the correspondence between user-transaction. 
 
 
 Challenges of developing fraud-detection models 
