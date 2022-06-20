@@ -509,63 +509,95 @@ or the other solution is to manually analyze final output and block the characte
 final result of cluster technique is a label dataset (final data is a cluster to which each single labelbelong ??)-> use the output of the unsupervised (cluster)and train a supervised on the basis og the label of the cluster technique 
 -> interpret the result! 
 
-# Predective analytics for fraud detection 
+## PREDICTIVE ANALYTICS FOR FRAUD DETECTION
 
+The aim is to build an analytical model predicting a target measure of interest
 (fraud lezione 5 )
 
 unsupervised learning techinque can generate new knowledge, i have to find a way to evaualte the result 
 Second main category 
-we have labels, called target variable
-not to model average/norm ma to directly predict the variable you have available, you exploit the target. you train your system by making it learn if the target is a particular variable or another 
--regression
 
-In the case of a continuour target variable( it can change ex amount / timestamp) 
+we have labels, called **target variable**
+
+not to model average/norm ma to directly predict the variable you have available, you exploit the target. you train your system by making it learn if the target is a particular variable or another
+
+#### regression
+
+In the case of a continuous target variable( it can change ex amount / timestamp) 
 time of amount of the next fraudolent transaction 
+varies along a predefined interval 
 
-
--classification
+#### classification
 
 we have a categorical target, can be binary or multiclass(we want do discern the different categories of fraud transactions)
 
 depending on the type of target variable you are predicting
-
-
 we are gonna focus on the binary
+
+**Target variable definition**
+
 Usually the target variable is hard to obtain 
 the quality of the final output depends on the quality of the lable we provide 
 main problem of applying supervised learning techniques? 
--we have few samples and in between them there are trans that are interesting ( nit really fraudolent), we have noise 
+-we have few samples and in between them there are transations that are interesting ( not really fraudolent), we have noise 
 
 A system cannot be based only on supervised learning
 we don't have enough data to model our system, this is why they are used together in an active learning system 
-deploung: COMPLEX ANALYTICAL MODELING EXERCISE
+COMPLEX ANALYTICAL MODELING EXERCISE
 
 defining the target and understand which is the best model that fit the target variable we want to predict
 
-one of the most usual solution to undestand if we are capable to predit a continuous target variable -> linear regression 
+### linear regression
+one of the most usual solution to understand if we are capable to predit a continuous target variable  
 model the target variable as a linear combination of the input of your system, weight the single input
 combine the input of your system in order to provide a linear combinatin 
 we do this obtimazing a property 
-minimize the so called squared error function
+minimize the so called **squared error function**
 build your linear regression model, compute/predict the target variable and THEN you select the values of the parameter to minimize the error of the prediction 
 
 how you obtain the weights by minimizing 
 
-graophical: finding a linear relation that minimized the sum of all error squares between the duistribution of your point and the line you are modelling 
+graphical: finding a linear relation that minimized the sum of all error squares between the distribution of your point and the line you are modelling 
 trying to find the best line that allows you to predict the best value of the distribution you are trying to predict
 
 goal: fin the best fitting line that allows you to predict the next value/amount of a transaction 
+find the best fit line that can accurately predict the output for the continuous dependent variable with the help of independent variables.
+
 
 if you try to apply it on NON continuous variable you can have some problems 
 transform your line in a x score or a sigmoid ?? 
 ypu want to bound between between 0,1 -> probability! 
+
+We pass the weighted sum of inputs through an activation function that can map values in between 0 and 1.
+Such activation function is known as sigmoid function and the curve obtained is called as sigmoid curve or S-curve.
+ 
 bounding function? 
 logistic regression ? 
+
 "Logistic regression estimates the probability of an event occurring, such as voted or didn't vote, based on a given dataset of independent variables. Since the outcome is a probability, the dependent variable is bounded between 0 and 1."
 best line that separetes class 1 and class 2
 
 
 Linear and logistic regression can be used for variable selection. 
+#### Linear regression 
+Predicting the **continuous** dependent variable with independent variables.
+Find the best fit line to
+ -predict the output for the continuous dependentvariable.
+ -finds the linear relationship between dependent variable and independent variable.
+Based on Ordinary least squares
+**Output** : continuous values
+
+#### Logistic regression 
+Predict the **categorical** dependent variable with independent variables.
+It estimates a linear decision boundary to separate both classes.
+Based on the concept of Maximum Likelihood estimation.
+Used for
+○ Classification
+○ Regression 
+○ where the probabilities is required.
+**Output**: between the 0 and 1.
+
+
 what about building a model on the basis of the target variable and exploit the grades that this model is assigning to each single feature 
 to undestabnd which are the variable ^^ more to the final variable
 this can be done with all the supervised method that are undestandable 
@@ -575,26 +607,31 @@ parameter that weights more -> the one we are going to use
 we can also do a statistical test to undestand  from the distribution of your data if the feature is relevant or Not
 you are gonna do a staticial test 
 
-linear regression -> student's t-distribution 
-logistic regression -> chi squared distribution 
+**linear regression -> student's t-distribution**
+**logistic regression -> chi squared distribution** 
 
 reject the null hypotesis if the estimate coefficent is high in absolute value  compared to its standard error 
 
-p-value rappresents the probability of getting the same value ??? no 
+### P-Value
+p-value rappresents the probability of a getting a more extreme value than the one observed.
+low p-value -> SIGNIFICANT VARIABLE
+high p-value -> INSIGNIFICAT VARIABLE
+We can compare the p-value against a singificance level 
+
 
 logistic tries to make this separation, how many times can we do this? 
 
 train your model, extract the data, manually see high value
-or you can do statically test -> p value -> select or not this feature (forward, backward, stepwise)
+or you can do statically test -> p value -> select or not this feature **(forward, backward, stepwise)**
 
 
-In general always rremember that when you are performing variable selection statistical significance is not the only metric we have to consider
+In general always remember that when you are performing variable selection statistical significance is not the only metric we have to consider
 statical can be help, but sometimes you have to consider 
--interpretability 
+-**interpretability**
 Interesting fact: does not only provides the importante of a feature may help you in interpreting the impact of that feature on th final target variable
 depending on the sign we can undestand if it produces a decrease or an increase-> 
--operational efficiency 
--legal issues 
+-**operational efficiency**
+-**legal issues**
 
 In general we almways have to find a trade-off good amount of feature and what to keep 
 
