@@ -230,11 +230,11 @@ not fitting only in a model.
 ## FRAUD ANALYTICAL PROCESS
 
 iterative, if you encounter a problem you have to go back to another 
-identify data sources: depends in which domain you are going to work 
-select the data, store in a consistend way 
-clean the data -> issue
-transform the data-> ML model wants the data in a particular form ( numerical and categorical into something that can be treated)
-analyze -> interpret and evaluate 
+1.identify data sources: depends in which domain you are going to work 
+2.select the data, store in a consistend way 
+3.clean the data -> issue
+4.transform the data-> ML model wants the data in a particular form ( numerical and categorical into something that can be treated)
+5.analyze -> interpret and evaluate 
 
 
 Analyzing output 
