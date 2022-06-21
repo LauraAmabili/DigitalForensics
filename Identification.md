@@ -81,26 +81,28 @@ MAC values, modifies accessed changed-- these data , OS record the last entry of
  
  Techniques that aim to create confusion in the analyst, to lead them off track, or to defeat tools and techniques used by analysts. 
  
--Transient and definitive
+Transient and definitive
+
 transient:all the tech that can hide evidence and confuse analysti provides he doesn't knows
+
 definitive: destroys the evidence
 
 most against the tools that the analyst uses. against acquisition and analysis/identification
 acquisition: impossible to acquire-> usually definitive
 identification: they tend to fold under transient, confuse the tools, not find evidence
 
-- Timeline tampering **(definitive)**
+1.Timeline tampering **(definitive)**
 antiforensic can targed data used to create a timeline, MACE
 Modify events by making them appear separated or close randomizing them or moving them completely out of scope - modifcation not visible 
 
-- Countering file recovery **(definitive)**
+2.Countering file recovery **(definitive)**
 some utility move around files moving only the valid data and zeroing the ***
 
--Fileless attacks **(definitive)**
+3.Fileless attacks **(definitive)**
 attacker, after exploitation, not while on disk, happens only in memory 
 when machine is shut down, evidence is lost
 
-- Filesystem Insertion and Subversion Technologies **(transient)**
+4.Filesystem Insertion and Subversion Technologies **(transient)**
 space reserved, fill with data that no one is going to look for, transient, data is there and if we were suspect that someone uses this techique we could find it
 
 can read ext3 partition with ext2 ( ignores a journal) 
@@ -108,11 +110,11 @@ if you build a fake ext3 journal and place data there, ext2 ignores it. tools ig
 inodes marked as directories KY FS **??**
 Data mule Fs puts the data in padding, empty areas tipically ignored by forensics tools-> cute idea, no one really uses it 
 
--Log analysis **(transient)**
+5.Log analysis **(transient)**
 rare forencis analyst looks at logs one by one, many times pre made scripts. if you are an attacker that is doing that, you may rewrite logs in a way that breaks those scripts
 inject columns, something that breaks the structure of the logs, breaks down on a line and skips stuff to be nascoste 
 
--Partition table tricks **(transient)**
+6.Partition table tricks **(transient)**
 fill partition that is overlapping
 in reality peolple have few partitions, bizzarre behaviours, one tool names partitions in the same ways windows does ( A,b,c,), in windows if you go beyond 20 partitions, the next is AA.. starts using two letters ncase ( the tool) doesn not do that, the 22 don't show up. inconsistency show up if you have a large number of partitions. 
 
